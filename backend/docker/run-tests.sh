@@ -15,6 +15,8 @@ run() {
 }
 
 PG="postgresql://cartly:cartly@${TEST_DB_HOST:-postgres-test}:5432"
+# The API's config needs a database URL even for unit tests (they never connect); each suite gets its own below.
+export DATABASE_URL="$PG/cartly_api_test"
 export REDIS_URL="${REDIS_URL:-redis://redis-test:6379/0}"
 export JWT_SECRET=test-jwt-secret-not-for-production INTERNAL_API_KEY=test-internal-key \
   PAYMENT_SECRETS_KEY=test-payment-secrets-key-0123456789 API_PORT=4100 AI_PORT=8001 UPLOAD_DIR=/tmp/cartly-uploads
