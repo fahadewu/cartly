@@ -1,0 +1,139 @@
+#!/usr/bin/env bash
+# Cartly in Docker, the short way. Every command is plain `docker compose` underneath (shown as it runs),
+# so on Windows without bash you can type those instead.
+#
+#   ./cartly up                       build and start everything, wait until it answers, print the addresses
+#   ./cartly down                     stop it (data is kept)
+#   ./cartly status                   what's running and healthy
+#   ./cartly logs [service]           follow the logs (api, ai, storefront, admin, postgres, redis)
+#   ./cartly backup [--with-secrets]  the whole store → backups/cartly-backup-<time>.tar.gz
+#   ./cartly restore <file> [--yes]   replace the store with a backup (from this or another machine)
+#   ./cartly import <file.csv> [--apply] [--category=<slug>] [--type=<type>] [--gender=men|women|unisex]
+#                                     products from a Cartly, Shopify or WooCommerce CSV (checks only, until --apply)
+#   ./cartly export [file.csv]        all products as a Cartly CSV (the import format)
+#   ./cartly reset                    delete everything and start again with the demo store
+#   ./cartly test [api|ai|web]        every automated test, in Docker, on throwaway databases (the store isn't touched)
+#   ./cartly smoke                    check a running store end to end over HTTP (pages, sign-in, Pip, the new features)
+set -euo pipefail
+cd "$(dirname "$0")"
+
+say() { printf '\033[2m$ %s\033[0m\n' "$*" >&2; }
+dc() { say "docker compose $*"; docker compose "$@"; }
+die() { echo "✗ $*" >&2; exit 1; }
+
+command -v docker >/dev/null || die "Docker isn't installed: https://docs.docker.com/get-docker/ (Docker Desktop, OrbStack or Colima)."
+docker compose version >/dev/null 2>&1 || die "Docker Compose v2 is missing (it comes with Docker Desktop; otherwise install the compose plugin)."
+docker info >/dev/null 2>&1 || die "Docker is installed but not running. Start Docker Desktop (or colima start) and try again."
+
+# The published ports: the environment, else .env, else the defaults (as docker compose reads them).
+port() { local v="${!1:-}"; [ -z "$v" ] && [ -f .env ] && v="$(sed -n "s/^$1=//p" .env | tail -1)"; echo "${v:-$2}"; }
+STOREFRONT="http://localhost:$(port CARTLY_STOREFRONT_PORT 5173)"
+ADMIN="http://localhost:$(port CARTLY_ADMIN_PORT 5174)"
+API="http://localhost:$(port CARTLY_API_PORT 4100)"
+
+running() { [ -n "$(docker compose ps -q --status running "$1" 2>/dev/null)" ]; }
+
+# On a non-APFS drive (exFAT, network shares) macOS writes a "._name" metadata file beside every file, and
+# Docker's build can't read them ("failed to xattr …/._…: operation not permitted"). They hold only Finder
+# metadata and git ignores them, so remove them from the build folders before building.
+clean_appledouble() {
+  [ "$(uname)" = Darwin ] || return 0
+  # The whole repo: the test image (./cartly test) builds from the root, not only the three app folders.
+  find . -name '._*' -type f -not -path '*/node_modules/*' -not -path '*/.venv/*' -not -path './.git/*' -delete 2>/dev/null || true
+}
+
+case "${1:-help}" in
+  up)
+    shift
+    clean_appledouble
+    dc up -d --build --wait "$@"
+    cat <<EOF
+
+✓ Cartly is running.
+  Store          $STOREFRONT        demo@cartly.dev / Demo1234!
+  Admin panel    $ADMIN        admin@cartly.dev / Admin1234!
+  Rider app      $ADMIN/rider  rider@cartly.dev / Rider1234!
+  API reference  $API/docs
+Stop it with ./cartly down; the data stays until ./cartly reset.
+EOF
+    ;;
+  down) shift; dc down "$@" ;;
+  status | ps) dc ps ;;
+  logs) shift; dc logs -f --tail=200 "$@" ;;
+
+  backup)
+    shift
+    mkdir -p backups
+    clean_appledouble
+    dc run --rm --build tools backup "$@"
+    ;;
+
+  restore)
+    shift
+    file=""; rest=()
+    for a in "$@"; do case "$a" in -*) rest+=("$a") ;; *) file="$a" ;; esac; done
+    [ -n "$file" ] || die "Usage: ./cartly restore <backup.tar.gz> [--yes]"
+    [ -f "$file" ] || die "No such file: $file"
+    mkdir -p backups
+    clean_appledouble
+    # The tools container sees ./backups; bring the file there if it's elsewhere.
+    case "$(cd "$(dirname "$file")" && pwd -P)" in
+      "$(pwd -P)/backups") ;;
+      *) cp "$file" backups/ ;;
+    esac
+    dc run --rm --build tools inspect "/backups/$(basename "$file")"
+    if [[ " ${rest[*]-} " != *" --yes "* && " ${rest[*]-} " != *" -y "* ]]; then
+      read -r -p "This REPLACES everything in this Cartly with the backup. Type 'restore' to go on: " answer
+      [ "$answer" = restore ] || die "Nothing changed."
+    fi
+    # Nothing may write to the database while it's replaced.
+    dc stop storefront admin ai api
+    dc run --rm tools restore "/backups/$(basename "$file")" --yes
+    dc up -d --wait
+    echo "✓ Restored. Store: $STOREFRONT · Admin: $ADMIN"
+    ;;
+
+  import)
+    shift
+    file=""; rest=()
+    for a in "$@"; do case "$a" in -*) rest+=("$a") ;; *) file="$a" ;; esac; done
+    [ -n "$file" ] || die "Usage: ./cartly import <products.csv> [--apply] [--category=<slug>] [--type=<type>] [--gender=<gender>]"
+    [ -f "$file" ] || die "No such file: $file"
+    running api || die "Start Cartly first: ./cartly up"
+    say "docker compose exec -T api sh /app/docker/with-secrets.sh npm run -s catalog:import -- - ${rest[*]-} < $file"
+    docker compose exec -T api sh /app/docker/with-secrets.sh npm run -s catalog:import -- - ${rest[@]+"${rest[@]}"} < "$file"
+    ;;
+
+  export)
+    shift
+    out="${1:-products-$(date +%Y%m%d).csv}"
+    running api || die "Start Cartly first: ./cartly up"
+    say "docker compose exec -T api sh /app/docker/with-secrets.sh npm run -s catalog:export > $out"
+    docker compose exec -T api sh /app/docker/with-secrets.sh npm run -s catalog:export > "$out"
+    echo "✓ $(($(wc -l < "$out") - 1)) products → $out"
+    ;;
+
+  reset)
+    read -r -p "This deletes every order, account and product in this Docker install. Type 'reset' to go on: " answer
+    [ "$answer" = reset ] || die "Nothing changed."
+    dc down -v
+    "$0" up
+    ;;
+
+  test)
+    shift
+    clean_appledouble
+    # The test database and Redis go away afterwards, whatever happened.
+    trap 'docker compose --profile test rm -sfv postgres-test redis-test >/dev/null 2>&1 || true' EXIT
+    dc --profile test run --rm --build test "$@"
+    ;;
+
+  smoke)
+    shift
+    running api || die "Start Cartly first: ./cartly up"
+    STOREFRONT="$STOREFRONT" ADMIN="$ADMIN" bash scripts/smoke.sh "$@"
+    ;;
+
+  help | -h | --help) sed -n '2,19p' "$0" | sed 's/^# \{0,1\}//' ;;
+  *) sed -n '2,19p' "$0" | sed 's/^# \{0,1\}//'; exit 2 ;;
+esac

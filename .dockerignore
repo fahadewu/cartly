@@ -1,0 +1,20 @@
+# Build context for the test runner (backend/docker/test.Dockerfile builds from the repository root).
+# The image installs its own Linux node_modules and Python packages; secrets and data stay out.
+.git
+.github
+**/.env
+**/.env.*
+!**/.env.example
+backups
+**/uploads
+**/node_modules
+**/dist
+**/*.tsbuildinfo
+backend/api/src/generated
+**/coverage
+backend/ai/.venv
+backend/ai/.models
+**/__pycache__
+**/.pytest_cache
+**/._*
+**/.DS_Store

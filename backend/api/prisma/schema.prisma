@@ -1,0 +1,761 @@
+// Cartly commerce schema. The API owns the `public` schema; the AI service keeps
+// its vector index in a separate `ai` schema so migrations never collide.
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "esm"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN // the store's staff roles: ADMIN, MANAGER, SUPPORT, MERCHANDISER, ANALYST (see src/common/permissions.ts)
+  RIDER // the store's own delivery rider: signs in to the rider app only
+  MANAGER
+  SUPPORT
+  MERCHANDISER
+  ANALYST
+}
+
+enum Gender {
+  men
+  women
+  unisex
+}
+
+enum OrderStatus {
+  PENDING_PAYMENT // placed, but the shopper hasn't finished paying online yet (stock is held)
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  UNPAID // cash on delivery, not collected yet
+  PENDING // sent to the payment gateway, not finished
+  PAID
+  FAILED
+  CANCELLED
+  EXPIRED
+  REFUNDED
+}
+
+enum DeliveryMethod {
+  standard
+  express
+}
+
+/// Where a parcel is. Couriers' own status names are mapped onto these (the original is kept as `courierStatus`).
+enum ShipmentStatus {
+  BOOKED // handed to a courier's system or assigned to a rider, waiting to be picked up
+  PICKED_UP
+  IN_TRANSIT // between the courier's hubs
+  OUT_FOR_DELIVERY
+  DELIVERED
+  FAILED_ATTEMPT // couldn't be delivered this time (customer unreachable, rescheduled…); will be tried again
+  RETURNING // on its way back to the store
+  RETURNED
+  CANCELLED
+}
+
+/// Where a return stands, from the shopper asking to the money going back.
+enum ReturnStatus {
+  REQUESTED // the shopper asked; the store hasn't decided
+  APPROVED // accepted: waiting for the parcel to come back (rider pickup or drop-off)
+  REJECTED
+  RECEIVED // back at the store and inspected
+  REFUNDED // money sent back (or recorded as sent)
+  CANCELLED // the shopper withdrew it
+}
+
+enum ReturnReason {
+  TOO_SMALL
+  TOO_LARGE
+  DAMAGED
+  WRONG_ITEM
+  NOT_AS_DESCRIBED
+  QUALITY
+  CHANGED_MIND
+  OTHER
+}
+
+enum RequestStatus {
+  RECEIVED
+  SOURCING
+  FOUND
+  UNAVAILABLE
+}
+
+enum TeamRole {
+  ADMIN
+  BUYER
+  VIEWER
+}
+
+enum MemberStatus {
+  INVITED
+  ACTIVE
+}
+
+model User {
+  id           String           @id @default(uuid())
+  email        String           @unique
+  name         String
+  passwordHash String
+  role         Role             @default(CUSTOMER)
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+  orders       Order[]
+  favourites   Favourite[]
+  reviews      Review[]
+  requests     ProductRequest[]
+  team         TeamMember[]
+  rider        Rider?
+  returns      ReturnRequest[]
+  events       DemandEvent[]
+  /// Off: no shopper profile is built and suggestions aren't personalised (Account → Privacy).
+  personalise  Boolean          @default(true)
+  visits       Visit[]
+  profile      ShopperProfile?
+  /// Set when an admin turns the account off: it can't sign in or use the admin panel.
+  disabledAt   DateTime?
+  /// Set by an admin (new account or reset): the admin panel asks for a new password at next sign-in.
+  passwordTemporary Boolean     @default(false)
+  lastSignInAt DateTime?
+  actions      AuditEntry[]     @relation("actor")
+  preferences  ShopperPreferences?
+  wants        ShopperWant[]
+  outreach     Outreach[]
+}
+
+/// Who changed what in the admin panel's people and team settings.
+model AuditEntry {
+  id        String   @id @default(uuid())
+  actorId   String?
+  actor     User?    @relation("actor", fields: [actorId], references: [id], onDelete: SetNull)
+  /// user.create | user.role | user.disable | user.enable | user.password | user.update
+  action    String
+  targetId  String?
+  /// The target's name and email when it happened, so the entry still reads after the account is gone.
+  target    String
+  detail    Json?
+  createdAt DateTime @default(now())
+
+  @@index([targetId, createdAt])
+  @@index([createdAt])
+}
+
+model Category {
+  slug     String    @id
+  title    String
+  subtitle String
+  color    String
+  image    String
+  types    String[]
+  products Product[]
+}
+
+model Collection {
+  slug     String @id
+  title    String
+  subtitle String
+  color    String
+  image    String
+}
+
+model Product {
+  id           Int         @id
+  slug         String      @unique
+  name         String
+  description  String
+  categorySlug String
+  category     Category    @relation(fields: [categorySlug], references: [slug])
+  type         String
+  gender       Gender
+  label        String
+  price        Decimal     @db.Decimal(10, 2)
+  compareAt    Decimal?    @db.Decimal(10, 2)
+  isNew        Boolean     @default(false)
+  rating       Float
+  reviewCount  Int
+  popularity   Int
+  image        String
+  photoId      String
+  colors       Json // [{ name, hex }]
+  sizes        String[]
+  collections  String[]
+  tryOnSlot    String? // set when the item can be virtually tried on
+  tryOnImage   String? // clean product photo the AI try-on uses (falls back to `image`)
+  tryOnInfo    Json? // { photoType, styling, check, crop, cutout } — see admin/catalog.ts
+  tryOnCutout  String? // transparent PNG of an accessory for the storefront's quick preview (made by the server)
+  stock        Int         @default(100)
+  active       Boolean     @default(true) // archived products are hidden from the storefront
+  // What Pip (the AI shopping assistant) and search know about the product beyond its description.
+  material     String? // "100% cotton", "full-grain leather"
+  fit          String? // slim | regular | relaxed | oversized (clothing)
+  fitNotes     String? // "runs small, size up"
+  occasions    String[]    @default([]) // everyday, office, party, wedding, festive, sport, travel…
+  seasons      String[]    @default([]) // summer, monsoon, autumn, winter, all-season
+  styleTags    String[]    @default([]) // minimal, streetwear, classic…
+  features     String[]    @default([]) // short selling points: "breathable", "hidden pocket"
+  keywords     String[]    @default([]) // other names shoppers use, in any language: "panjabi", "পাঞ্জাবি"
+  careNotes    String?
+  pairsWith    Int[]       @default([]) // product ids that go well with it
+  /// How it really fits, from shoppers: fit reviews and size returns, kept current by api/src/catalog/fit.ts.
+  /// {"small":n,"true":n,"large":n} counts; fitVerdict is "small" | "true" | "large" once enough agree, else null.
+  fitVotes     Json        @default("{}")
+  fitVerdict   String?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  reviews      Review[]
+  favourites   Favourite[]
+  orderItems   OrderItem[]
+
+  @@index([categorySlug])
+  @@index([type])
+  @@index([gender])
+  @@index([price])
+  @@index([popularity])
+  @@index([active])
+}
+
+model Story {
+  slug       String   @id
+  title      String
+  excerpt    String
+  color      String
+  image      String
+  body       String[]
+  productIds Int[]
+  createdAt  DateTime @default(now())
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  productId Int
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  author    String
+  rating    Int
+  title     String
+  text      String
+  /// Fit details the reviewer chose to give: the size they bought, how it fit ("small" | "true" | "large"),
+  /// their height and their usual size. They help shoppers like them pick a size.
+  size      String?
+  fit       String?
+  heightCm  Int?
+  usualSize String?
+  /// Up to 3 photo URLs (uploads/reviews/), EXIF stripped on upload.
+  photos    String[] @default([])
+  /// The reviewer had a delivered order with this product when they wrote it.
+  verified  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([productId, createdAt])
+  @@index([userId])
+}
+
+model Favourite {
+  userId    String
+  productId Int
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@id([userId, productId])
+}
+
+model PromoCode {
+  code      String  @id
+  percent   Float // 0.2 = 20% off
+  active    Boolean @default(true)
+  /// A personal code (e.g. a stamp-card reward): only this shopper can use it.
+  userId    String?
+  /// Usable on one order (cancelled orders give it back).
+  singleUse Boolean @default(false)
+
+  @@index([userId])
+}
+
+model Order {
+  id            String         @id // human-friendly, e.g. CL-20931
+  userId        String
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status        OrderStatus    @default(PROCESSING)
+  subtotal      Decimal        @db.Decimal(10, 2)
+  discount      Decimal        @db.Decimal(10, 2)
+  shipping      Decimal        @db.Decimal(10, 2)
+  total         Decimal        @db.Decimal(10, 2)
+  promoCode     String?
+  delivery      DeliveryMethod
+  address       Json // { name, street, city, postal, country, phone? }
+  cardLast4     String? // demo card orders only
+  /// bkash | nagad | rocket | card | cod | demo
+  paymentMethod String         @default("demo")
+  paymentStatus PaymentStatus  @default(PAID)
+  /// What the shopper pays in taka, and the taka-per-dollar rate it was worked out at.
+  amountBdt     Decimal?       @db.Decimal(12, 2)
+  exchangeRate  Decimal?       @db.Decimal(10, 4)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  items         OrderItem[]
+  payments      Payment[]
+  shipments     Shipment[]
+  returns       ReturnRequest[]
+
+  @@index([userId, createdAt])
+  @@index([status])
+  @@index([createdAt])
+  @@index([paymentStatus])
+}
+
+/// One attempt to pay for an order online (a shopper can retry, so an order may have several).
+model Payment {
+  id        String        @id @default(uuid())
+  orderId   String
+  order     Order         @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  /// bkash | nagad | rocket | card
+  method    String
+  /// bkash | nagad | sslcommerz
+  gateway   String
+  sandbox   Boolean
+  status    PaymentStatus @default(PENDING)
+  /// The id sent to the gateway (invoice / order / transaction id): unique per attempt.
+  invoice   String        @unique
+  amount    Decimal       @db.Decimal(12, 2)
+  currency  String        @default("BDT")
+  /// The gateway's id for this attempt: bKash paymentID, Nagad paymentReferenceId, SSLCommerz sessionkey.
+  reference String?
+  /// The gateway's transaction id once paid (bKash trxID, Nagad issuerPaymentRefNo, SSLCommerz bank_tran_id).
+  trxId     String?
+  refunded  Decimal       @default(0) @db.Decimal(12, 2)
+  error     String?
+  /// Each step with the gateway's reply (never credentials), newest last.
+  log       Json          @default("[]")
+  paidAt    DateTime?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@index([orderId])
+  @@index([status, createdAt])
+}
+
+/// Payment options at checkout: bkash | nagad | rocket | card | cod | demo.
+model PaymentMethod {
+  id       String  @id
+  enabled  Boolean @default(false)
+  position Int     @default(0)
+}
+
+/// Gateway accounts: bkash | nagad | sslcommerz (Rocket and cards).
+model PaymentGateway {
+  id        String   @id
+  live      Boolean  @default(false) // false = the gateway's sandbox
+  /// The credentials as JSON, encrypted with AES-256-GCM (key: PAYMENT_SECRETS_KEY). Never sent to a browser.
+  secrets   String?
+  updatedAt DateTime @updatedAt
+}
+
+/// Store-wide settings edited in the admin panel, e.g. usdToBdt.
+model StoreSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+/// A delivery rider employed by the store. Signs in with the linked user account (role RIDER).
+model Rider {
+  id        String     @id @default(uuid())
+  userId    String     @unique
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  phone     String
+  /// The areas they usually cover, e.g. "Dhanmondi, Mohammadpur".
+  zone      String?
+  /// bike | bicycle | van | walk
+  vehicle   String?
+  /// Inactive riders can't sign in or be given parcels; their past deliveries stay.
+  active    Boolean    @default(true)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  shipments Shipment[]
+}
+
+/// One trip of an order's parcel: with the store's own rider or a courier. A returned or cancelled
+/// shipment can be followed by another, so an order may have several (only one active at a time).
+model Shipment {
+  id            String          @id @default(uuid())
+  orderId       String
+  order         Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  /// delivery: to the customer. return: a rider collecting a return from them (its `returnId`).
+  kind          String          @default("delivery")
+  returnId      String?
+  return        ReturnRequest?  @relation(fields: [returnId], references: [id], onDelete: SetNull)
+  /// rider | pathao | steadfast | redx
+  carrier       String
+  riderId       String?
+  rider         Rider?          @relation(fields: [riderId], references: [id], onDelete: SetNull)
+  /// Booked in the courier's sandbox (a test parcel nobody picks up).
+  sandbox       Boolean         @default(false)
+  status        ShipmentStatus  @default(BOOKED)
+  /// The order id as the courier knows it (merchant invoice): CL-1234567, then CL-1234567-2 for a re-send.
+  invoice       String          @unique
+  /// The courier's parcel id: Pathao and Steadfast consignment_id, RedX tracking_id.
+  consignmentId String?
+  /// What the customer can track it with on the courier's site, and the link to do that.
+  trackingCode  String?
+  trackingUrl   String?
+  /// The courier's own status text, as last reported.
+  courierStatus String?
+  /// Cash to collect on delivery, in taka (0 when already paid), and what was actually collected.
+  codAmount     Decimal         @default(0) @db.Decimal(12, 2)
+  codCollected  Decimal?        @db.Decimal(12, 2)
+  /// When the store's rider handed the cash they collected in (rider deliveries only).
+  codSettledAt  DateTime?
+  /// The courier's delivery charge, in taka, once known.
+  charge        Decimal?        @db.Decimal(12, 2)
+  weightKg      Decimal?        @db.Decimal(6, 2)
+  /// For the rider or courier ("call before coming", "fragile").
+  note          String?
+  /// Who and where it goes, as sent: { name, phone, address, city, area?, location? }.
+  recipient     Json
+  /// The customer shows this to the store's rider to confirm they received it (rider deliveries only).
+  deliveryCode  String?
+  /// The last problem syncing with the courier.
+  error         String?
+  pickedUpAt    DateTime?
+  deliveredAt   DateTime?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  events        ShipmentEvent[]
+
+  @@unique([carrier, consignmentId])
+  @@index([orderId])
+  @@index([status, updatedAt])
+  @@index([riderId, status])
+  @@index([returnId])
+}
+
+/// A line in a shipment's tracking history, newest last.
+model ShipmentEvent {
+  id         String         @id @default(uuid())
+  shipmentId String
+  shipment   Shipment       @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+  status     ShipmentStatus
+  message    String
+  /// courier | rider | admin | system
+  source     String
+  /// The courier's webhook or tracking reply (never credentials).
+  raw        Json?
+  at         DateTime       @default(now())
+
+  @@index([shipmentId, at])
+}
+
+/// Courier accounts: pathao | steadfast | redx.
+model Courier {
+  id        String   @id
+  enabled   Boolean  @default(false)
+  live      Boolean  @default(false) // false = the courier's sandbox
+  /// The credentials as JSON, encrypted like the payment gateways' (key: PAYMENT_SECRETS_KEY).
+  secrets   String?
+  updatedAt DateTime @updatedAt
+}
+
+model OrderItem {
+  id        String  @id @default(uuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+  name      String
+  image     String
+  price     Decimal @db.Decimal(10, 2)
+  qty       Int
+  color     String
+  size      String
+  returns   ReturnItem[]
+
+  @@index([productId])
+  @@index([orderId])
+}
+
+/// A shopper sending some or all of a delivered order back.
+model ReturnRequest {
+  id           String       @id // RT-1234567
+  orderId      String
+  order        Order        @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  userId       String
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status       ReturnStatus @default(REQUESTED)
+  reason       ReturnReason
+  /// The shopper's own words.
+  note         String?
+  /// Why the store turned it down, or anything it noted on inspection.
+  storeNote    String?
+  /// What goes back to the shopper, in dollars (item prices) and in taka at the order's rate.
+  refundUsd    Decimal      @db.Decimal(10, 2)
+  refundBdt    Decimal?     @db.Decimal(12, 2)
+  /// How the money went back: the gateway payment refunded, or a manual transfer (bKash/Nagad number, cash).
+  refundMethod String?
+  refundRef    String?
+  items        ReturnItem[]
+  /// The pickup trip, when the store's rider collects it.
+  shipments    Shipment[]
+  approvedAt   DateTime?
+  receivedAt   DateTime?
+  refundedAt   DateTime?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  @@index([orderId])
+  @@index([status, createdAt])
+  @@index([createdAt])
+}
+
+model ReturnItem {
+  id          String        @id @default(uuid())
+  returnId    String
+  return      ReturnRequest @relation(fields: [returnId], references: [id], onDelete: Cascade)
+  orderItemId String
+  orderItem   OrderItem     @relation(fields: [orderItemId], references: [id], onDelete: Cascade)
+  qty         Int
+  /// Set on inspection: went back into stock (false when damaged or unsellable).
+  restocked   Boolean?
+
+  @@index([orderItemId])
+  @@index([returnId])
+}
+
+/// What shoppers look at, search for and want: the demand side of the analytics. Orders are counted from
+/// the orders themselves, so this only holds what orders can't show.
+model DemandEvent {
+  id        BigInt   @id @default(autoincrement())
+  /// view | search | cart_add | favourite | tryon
+  type      String
+  userId    String?
+  /// A deleted account takes its browsing history with it.
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId Int?
+  /// Searches: what was typed (trimmed, lower case) and how many products came back.
+  query     String?
+  results   Int?
+  createdAt DateTime @default(now())
+
+  @@index([type, createdAt])
+  @@index([productId, type])
+  @@index([createdAt])
+  @@index([userId, createdAt])
+}
+
+model ProductRequest {
+  id        String        @id @default(uuid())
+  userId    String
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product   String
+  category  String
+  size      String?
+  budget    Decimal?      @db.Decimal(10, 2)
+  link      String?
+  notes     String?
+  email     String
+  status    RequestStatus @default(RECEIVED)
+  createdAt DateTime      @default(now())
+  @@index([userId, createdAt])
+}
+
+model TeamMember {
+  id        String       @id @default(uuid())
+  ownerId   String
+  owner     User         @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  name      String
+  email     String
+  role      TeamRole     @default(BUYER)
+  status    MemberStatus @default(INVITED)
+  createdAt DateTime     @default(now())
+
+  @@unique([ownerId, email])
+}
+
+/// One browsing session: a device's visit from landing to leaving (a new one starts after 30 idle minutes).
+model Visit {
+  /// Made by the browser, so pages can be sent before the server has seen the visit.
+  id         String     @id
+  /// A random id kept on the device: the same visitor across visits, signed in or not.
+  visitorId  String
+  userId     String?
+  user       User?      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  startedAt  DateTime
+  lastSeenAt DateTime
+  landing    String
+  /// The last page seen: where the visitor left.
+  exitPath   String?
+  /// Where they came from: the referring site's host, and the source (utm_source, or search/social/referral/direct).
+  referrer   String?
+  source     String
+  medium     String?
+  campaign   String?
+  device     String?
+  browser    String?
+  os         String?
+  /// Approximate location from the CDN or GeoIP (never the IP itself), else the device's time zone and language.
+  country    String?
+  region     String?
+  city       String?
+  /// How the location was found: cdn | geoip | device
+  geoSource  String?
+  timeZone   String?
+  locale     String?
+  pageCount  Int        @default(0)
+  /// Time the store was actually on screen (hidden tabs don't count).
+  activeMs   Int        @default(0)
+  pages      PageView[]
+
+  @@index([startedAt])
+  @@index([userId, startedAt])
+  @@index([visitorId])
+}
+
+model PageView {
+  visitId   String
+  visit     Visit    @relation(fields: [visitId], references: [id], onDelete: Cascade)
+  /// 1, 2, 3… in the order the pages were opened during the visit.
+  seq       Int
+  /// The path with ids kept (/product/12) and the route name (product), so pages can be grouped.
+  path      String
+  route     String
+  enteredAt DateTime
+  activeMs  Int      @default(0)
+  /// How far down the page they scrolled, 0–100.
+  scrollPct Int?
+
+  @@id([visitId, seq])
+  @@index([enteredAt])
+  @@index([route, enteredAt])
+}
+
+/// What the store has learned about a shopper's taste, rebuilt from what they do (see analytics/profile.ts).
+/// Everything here is an assumption from behaviour, not something the shopper told us.
+model ShopperProfile {
+  userId      String   @id
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /// The main shopping personality, e.g. "minimalist", and the full mix { minimalist: 0.42, classic: 0.31 }.
+  personality String?
+  styles      Json
+  /// Raw style tags with weights, used to score products.
+  tags        Json
+  categories  Json
+  /// Share of attention by product gender (men, women, unisex).
+  genders     Json     @default("{}")
+  /// Share of attention by colour family (black, blue, earth…), from the colours of what they engaged with.
+  colors      Json     @default("{}")
+  /// Average price looked at against each category's median (1 = typical).
+  priceRatio  Float?
+  /// budget | value | premium, from the prices they look at against each category's median.
+  priceBand   String?
+  /// deal-seeker, trend-seeker, decisive, explorer, tries-before-buying…
+  traits      String[] @default([])
+  /// Assumed age group (18-24, 25-34…) and how sure the guess is, 0–1. Null until there's enough to go on.
+  ageGroup    String?
+  ageConfidence Float?
+  /// How much behaviour the profile rests on (weighted events).
+  evidence    Float    @default(0)
+  updatedAt   DateTime @updatedAt
+
+  @@index([personality])
+  @@index([ageGroup])
+}
+
+/// What the shopper told us about themselves (Account → Your sizes, Your colouring, Emails). Never inferred:
+/// the colouring is either picked or estimated on their device from a photo they chose, then confirmed.
+model ShopperPreferences {
+  userId           String    @id
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /// Monk Skin Tone scale, 1 (lightest) to 10 (deepest). Optional; deletable on its own.
+  skinTone         Int?
+  /// warm | cool | neutral
+  undertone        String?
+  /// picked | photo (estimated on the device, then confirmed by the shopper)
+  toneSource       String?
+  toneUpdatedAt    DateTime?
+  /// Usual size per product type, e.g. { "Clothing": "M", "Shoes": "41" }.
+  sizes            Json      @default("{}")
+  /// slim | regular | relaxed | oversized
+  fit              String?
+  /// Styles they picked in the "This or that" style quiz (personality keys from api/src/journeys/taste.ts).
+  /// What they told us, so recommendations and Pip may say "because you picked …".
+  styles           String[]  @default([])
+  stylesAt         DateTime?
+  /// Emails about products for them (back in stock, price drops, what they looked for). Opt-in.
+  marketingEmails  Boolean   @default(false)
+  marketingSince   DateTime?
+  /// en | bn: the language of those emails.
+  emailLang        String    @default("en")
+  /// In every email's unsubscribe link.
+  unsubscribeToken String    @unique @default(uuid())
+  updatedAt        DateTime  @updatedAt
+
+  @@index([marketingEmails])
+}
+
+/// Something a shopper looked for that the store didn't have (or had sold out): a search with no results,
+/// a Pip chat where nothing fitted, a sold-out product they viewed, or a product request. Matched against
+/// the catalogue whenever it changes, so the store can tell them when it arrives.
+model ShopperWant {
+  id               Int       @id @default(autoincrement())
+  userId           String
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /// search | chat | soldout | request
+  source           String
+  /// What they asked for, as typed or as Pip summed it up ("red silk saree under $60").
+  text             String
+  /// The sold-out product, for source soldout.
+  productId        Int?
+  createdAt        DateTime  @default(now())
+  /// The product that now answers it, and when that was found.
+  matchedProductId Int?
+  matchedAt        DateTime?
+  /// No longer worth telling them (they bought something like it, it's old, or they were told).
+  closedAt         DateTime?
+  closedReason     String?
+
+  @@index([userId, createdAt])
+  @@index([closedAt, matchedAt])
+  @@index([productId])
+}
+
+/// An email that tells a shopper about products for them: drafted by the outreach worker with why, sent by
+/// staff from the Outbox or automatically for the kinds switched to automatic (Admin → Emails → Settings).
+model Outreach {
+  id         Int       @id @default(autoincrement())
+  userId     String
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  /// found_it | back_in_stock | price_drop | cart | picked_for_you
+  kind       String
+  /// draft (waits for staff) | queued (sends when the frequency cap allows) | sent | skipped | failed
+  status     String    @default("draft")
+  subject    String
+  productIds Int[]
+  /// Why each product was picked: [{ productId, reason, score }]. For staff only; the email never says it.
+  reasons    Json      @default("[]")
+  wantIds    Int[]     @default([])
+  /// In the email's links: clicks are counted per email.
+  token      String    @unique @default(uuid())
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  sentAt     DateTime?
+  clickedAt  DateTime?
+  clicks     Int       @default(0)
+  error      String?
+  /// The staff member who sent or skipped it (null: automatic).
+  decidedBy  String?
+
+  @@index([status, createdAt])
+  @@index([userId, createdAt])
+  @@index([kind, status])
+}

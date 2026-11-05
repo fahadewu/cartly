@@ -1,0 +1,23 @@
+# Build context for api/Dockerfile and ai/Dockerfile (both build from this folder).
+# Keeps host builds, secrets, uploads and downloaded models out of the images; the images install
+# their own Linux node_modules and Python packages.
+.git
+.env
+.env.*
+uploads
+backups
+**/node_modules
+**/dist
+**/*.tsbuildinfo
+api/src/generated
+api/coverage
+ai/.venv
+ai/.models
+ai/.tryon-eval
+ai/.autoresearch
+ai/tests
+**/__pycache__
+**/.pytest_cache
+# macOS metadata (AppleDouble files on non-APFS volumes)
+**/._*
+**/.DS_Store

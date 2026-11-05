@@ -1,0 +1,29 @@
+# Secrets: copy .env.example to .env
+.env
+.env.*
+!.env.example
+
+# Node (api/)
+node_modules/
+dist/
+*.tsbuildinfo
+api/src/generated/
+coverage/
+*.log
+
+# Python (ai/)
+ai/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Product photos uploaded in the admin panel (served by the API)
+uploads/
+
+# macOS metadata (AppleDouble files on this non-APFS volume)
+._*
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

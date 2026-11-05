@@ -1,0 +1,6 @@
+.git
+node_modules
+dist
+.vscode
+**/._*
+**/.DS_Store

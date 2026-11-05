@@ -1,0 +1,179 @@
+# Cartly, the whole stack in Docker: one command, no configuration.
+#
+#   docker compose up --build          first start builds the images (a few minutes), then loads the demo store
+#   open http://localhost:5173         the store          (demo@cartly.dev / Demo1234!)
+#   open http://localhost:5174         the admin panel    (admin@cartly.dev / Admin1234!; the rider app is /rider)
+#   open http://localhost:4100/docs    the API reference
+#
+# Optional: copy .env.example to .env for AI keys (Pip on Claude, AI try-on, voice), other ports or a real store.
+# Everything else (database, secrets, demo data, test accounts, sandbox payments) is set up on the first start.
+# Data lives in Docker volumes and survives restarts; `docker compose down -v` deletes it all.
+# Backups, restores and product imports: ./cartly help (or the "Data" section of README.md).
+# Every automated test in Docker: ./cartly test. A quick end-to-end check of a running store: ./cartly smoke.
+name: cartly
+
+x-env-file: &env-file
+  # The workspace .env, when there is one (all of it is optional).
+  env_file:
+    - path: .env
+      required: false
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: cartly
+      POSTGRES_PASSWORD: cartly
+      POSTGRES_DB: cartly
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cartly -d cartly"]
+      interval: 5s
+      retries: 20
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    # Carts and Pip's memory live here, so it saves to disk.
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes: [redisdata:/data]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 20
+    restart: unless-stopped
+
+  api:
+    build: { context: ./backend, dockerfile: api/Dockerfile }
+    <<: *env-file
+    environment:
+      DATABASE_URL: postgresql://cartly:cartly@postgres:5432/cartly
+      REDIS_URL: redis://redis:6379/0
+      AI_SERVICE_URL: http://ai:8001
+      API_PORT: "4100"
+      # What browsers use: the published ports below.
+      API_PUBLIC_URL: ${API_PUBLIC_URL:-http://localhost:${CARTLY_API_PORT:-4100}}
+      STOREFRONT_URL: ${STOREFRONT_URL:-http://localhost:${CARTLY_STOREFRONT_PORT:-5173}}
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:${CARTLY_STOREFRONT_PORT:-5173},http://localhost:${CARTLY_ADMIN_PORT:-5174}}
+      # The storefront and admin containers are one proxy hop in front of the API.
+      TRUST_PROXY: ${TRUST_PROXY:-1}
+      # development keeps the demo card and the test kit (test accounts, sandbox gateways) available.
+      # Set NODE_ENV=production in .env for a real store.
+      NODE_ENV: ${NODE_ENV:-development}
+      UPLOAD_DIR: /data/uploads
+      # Outreach emails (Admin → Emails). The bundled Mailpit catches them all: read them at http://localhost:8025.
+      # For real delivery set SMTP_URL (smtp://user:pass@host:587) and MAIL_FROM in .env.
+      SMTP_URL: ${SMTP_URL:-smtp://mailpit:1025}
+      MAIL_FROM: ${MAIL_FROM:-Cartly <hello@cartly.dev>}
+    volumes:
+      - uploads:/data/uploads
+      - secrets:/var/lib/cartly
+    # Published on this machine only, for the API reference at /docs. Shoppers reach the API through the storefront.
+    ports: ["127.0.0.1:${CARTLY_API_PORT:-4100}:4100"]
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    restart: unless-stopped
+
+  ai:
+    build: { context: ./backend, dockerfile: ai/Dockerfile }
+    <<: *env-file
+    environment:
+      DATABASE_URL: postgresql://cartly:cartly@postgres:5432/cartly
+      REDIS_URL: redis://redis:6379/0
+      AI_PORT: "8001"
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:${CARTLY_STOREFRONT_PORT:-5173},http://localhost:${CARTLY_ADMIN_PORT:-5174}}
+    volumes:
+      - secrets:/var/lib/cartly:ro
+      # The accessory cut-out model (~220 MB), downloaded the first time it's needed.
+      - models:/data/models
+    # Not published: only the API talks to it (it spends on Claude, FASHN and ElevenLabs when they have keys).
+    depends_on:
+      api: { condition: service_healthy }
+    restart: unless-stopped
+
+  storefront:
+    build:
+      context: ./storefront
+      args:
+        VITE_SHOW_TEST_ACCOUNTS: ${VITE_SHOW_TEST_ACCOUNTS:-${NODE_ENV:-development}}
+    ports: ["${CARTLY_STOREFRONT_PORT:-5173}:80"]
+    depends_on:
+      api: { condition: service_healthy }
+    restart: unless-stopped
+
+  admin:
+    build:
+      context: ./admin
+      args:
+        VITE_STOREFRONT_URL: ${STOREFRONT_URL:-http://localhost:${CARTLY_STOREFRONT_PORT:-5173}}
+        VITE_SHOW_TEST_ACCOUNTS: ${VITE_SHOW_TEST_ACCOUNTS:-${NODE_ENV:-development}}
+    ports: ["${CARTLY_ADMIN_PORT:-5174}:80"]
+    depends_on:
+      api: { condition: service_healthy }
+    restart: unless-stopped
+
+  # Catches every email Cartly sends, so nothing reaches a real inbox: http://localhost:8025
+  mailpit:
+    image: axllent/mailpit:v1.27
+    ports: ["127.0.0.1:${CARTLY_MAIL_PORT:-8025}:8025"]
+    restart: unless-stopped
+
+  # Backups and restores (not started by `up`):  ./cartly backup  ·  ./cartly restore <file>
+  # or directly:  docker compose run --rm tools backup
+  tools:
+    profiles: [tools]
+    build: { context: ./backend, dockerfile: docker/tools.Dockerfile }
+    environment:
+      DATABASE_URL: postgresql://cartly:cartly@postgres:5432/cartly
+      REDIS_URL: redis://redis:6379/0
+      UPLOAD_DIR: /data/uploads
+      API_PUBLIC_URL: ${API_PUBLIC_URL:-http://localhost:${CARTLY_API_PORT:-4100}}
+      SECRETS_FILE: /var/lib/cartly/secrets.env
+      MIGRATIONS_DIR: /migrations
+      BACKUP_DIR: /backups
+    volumes:
+      - uploads:/data/uploads
+      - secrets:/var/lib/cartly
+      - ./backups:/backups
+      - ./backend/api/prisma/migrations:/migrations:ro
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  # Automated tests (not started by `up`):  ./cartly test   (or: docker compose --profile test run --rm --build test)
+  # Their own throwaway Postgres and Redis, in memory, so the demo store is never touched.
+  postgres-test:
+    profiles: [test]
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: cartly
+      POSTGRES_PASSWORD: cartly
+      POSTGRES_DB: cartly
+    tmpfs: [/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cartly -d cartly"]
+      interval: 3s
+      retries: 30
+
+  redis-test:
+    profiles: [test]
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      retries: 30
+
+  test:
+    profiles: [test]
+    build: { context: ., dockerfile: backend/docker/test.Dockerfile }
+    depends_on:
+      postgres-test: { condition: service_healthy }
+      redis-test: { condition: service_healthy }
+
+volumes:
+  pgdata:
+  redisdata:
+  uploads:
+  models:
+  secrets:

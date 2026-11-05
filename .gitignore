@@ -1,0 +1,27 @@
+# Secrets and local data never go in the repo.
+.env
+.env.*
+!.env.example
+backups/
+uploads/
+
+# Dependencies and builds
+node_modules/
+dist/
+dist-ssr/
+*.tsbuildinfo
+coverage/
+*.log
+backend/api/src/generated/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/ai/.models/
+
+# macOS metadata (AppleDouble files on non-APFS drives) and editors
+._*
+.DS_Store
+.idea/

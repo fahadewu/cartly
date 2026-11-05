@@ -1,0 +1,22 @@
+fastapi==0.141.1
+# File uploads (speech-to-text audio)
+python-multipart==0.0.32
+uvicorn[standard]==0.54.0
+psycopg[binary]==3.3.6
+psycopg-pool==3.3.3
+pgvector==0.5.0
+redis==8.1.0
+pydantic==2.13.5
+python-dotenv==1.2.3
+numpy==2.5.3
+pillow==12.3.0
+# Accessory cut-outs for the quick preview (the model downloads on first use)
+onnxruntime==1.30.0
+httpx==0.28.1
+# Pip's brain and the admin photo review (Claude)
+anthropic==1.9.0
+pytest==9.1.1
+# Optional: LiveKit tokens for real-time voice (imported lazily)
+livekit-api==1.2.1
+# Optional: EMBEDDINGS_PROVIDER=sentence-transformers
+# sentence-transformers

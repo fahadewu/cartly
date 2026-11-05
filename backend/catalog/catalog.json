@@ -1,0 +1,4210 @@
+{
+  "exportedAt": "2026-09-28T21:02:45.920Z",
+  "products": [
+    {
+      "id": 1,
+      "slug": "runner-flow-sneaker",
+      "name": "Runner Flow Sneaker",
+      "description": "A featherweight runner with a sculpted sole and playful colour-blocked laces, made for city miles.",
+      "category": "clothing-shoes",
+      "type": "Shoes",
+      "gender": "women",
+      "label": "Our Picks",
+      "price": 36,
+      "compareAt": 72,
+      "isNew": false,
+      "rating": 4.9,
+      "reviewCount": 55,
+      "popularity": 990,
+      "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1560769629-975ec94e6a86",
+      "colors": [
+        {
+          "name": "Blush",
+          "hex": "#f7a8c9"
+        },
+        {
+          "name": "Lemon",
+          "hex": "#f5d75a"
+        }
+      ],
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "collections": [
+        "offers"
+      ],
+      "tryOn": {
+        "slot": "feet"
+      },
+      "reviews": [
+        {
+          "id": "1-0",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-09-18T18:00:00.000Z",
+          "fit": "true"
+        },
+        {
+          "id": "1-1",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-08-18T18:00:00.000Z"
+        },
+        {
+          "id": "1-2",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-07-18T18:00:00.000Z",
+          "fit": "small"
+        }
+      ],
+      "details": {
+        "material": "Engineered mesh upper, EVA foam sole",
+        "fitNotes": "True to size",
+        "occasions": [
+          "everyday",
+          "sport",
+          "travel"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "sporty",
+          "playful",
+          "streetwear"
+        ],
+        "features": [
+          "Featherweight build",
+          "Sculpted cushioned sole",
+          "Colour-blocked laces"
+        ],
+        "keywords": [
+          "running shoes",
+          "joggers",
+          "sneakers",
+          "keds",
+          "কেডস",
+          "জুতা"
+        ],
+        "pairsWith": [
+          5,
+          21
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "slug": "air-pulse-trainer",
+      "name": "Air Pulse Trainer",
+      "description": "Visible cushioning meets a clean leather-and-mesh upper. Your everyday trainer, dialled up.",
+      "category": "clothing-shoes",
+      "type": "Shoes",
+      "gender": "men",
+      "label": "Your Choice",
+      "price": 89,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.8,
+      "reviewCount": 92,
+      "popularity": 984,
+      "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1600185365483-26d7a4cc7519",
+      "colors": [
+        {
+          "name": "Lemon",
+          "hex": "#f5d75a"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "feet"
+      },
+      "reviews": [
+        {
+          "id": "2-0",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-09-17T18:00:00.000Z"
+        },
+        {
+          "id": "2-1",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-08-17T18:00:00.000Z"
+        },
+        {
+          "id": "2-2",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-07-17T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Leather and mesh upper, visible-air cushioned sole",
+        "occasions": [
+          "everyday",
+          "sport"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "sporty",
+          "streetwear",
+          "classic"
+        ],
+        "features": [
+          "Visible cushioning",
+          "Leather-and-mesh upper",
+          "All-day comfort"
+        ],
+        "keywords": [
+          "trainers",
+          "sneakers",
+          "running shoes",
+          "keds",
+          "কেডস",
+          "জুতা"
+        ],
+        "pairsWith": [
+          10,
+          21
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "slug": "pastel-court-low",
+      "name": "Pastel Court Low",
+      "description": "Court classic reworked in soft sorbet tones with a padded collar and tonal stitching.",
+      "category": "clothing-shoes",
+      "type": "Shoes",
+      "gender": "women",
+      "label": "New In",
+      "price": 74,
+      "compareAt": null,
+      "isNew": true,
+      "rating": 4.7,
+      "reviewCount": 129,
+      "popularity": 607,
+      "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1595950653106-6c9ebd614d3a",
+      "colors": [
+        {
+          "name": "Sky",
+          "hex": "#c9d7ff"
+        },
+        {
+          "name": "Butter",
+          "hex": "#ffe29a"
+        }
+      ],
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "collections": [
+        "winter-weekend"
+      ],
+      "tryOn": {
+        "slot": "feet"
+      },
+      "reviews": [
+        {
+          "id": "3-0",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-09-16T18:00:00.000Z"
+        },
+        {
+          "id": "3-1",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-08-16T18:00:00.000Z",
+          "fit": "small"
+        },
+        {
+          "id": "3-2",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-07-16T18:00:00.000Z",
+          "fit": "true"
+        }
+      ],
+      "details": {
+        "material": "Leather upper, rubber cupsole",
+        "occasions": [
+          "everyday",
+          "travel"
+        ],
+        "seasons": [
+          "summer",
+          "all-season"
+        ],
+        "styleTags": [
+          "pastel",
+          "casual",
+          "minimal"
+        ],
+        "features": [
+          "Soft sorbet tones",
+          "Padded collar",
+          "Tonal stitching"
+        ],
+        "keywords": [
+          "court shoes",
+          "low tops",
+          "sneakers",
+          "keds",
+          "কেডস",
+          "জুতা"
+        ],
+        "pairsWith": [
+          18,
+          5
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "slug": "copper-bomber-jacket",
+      "name": "Copper Bomber Jacket",
+      "description": "A satin-finish bomber with ribbed trims and a lightweight quilted lining for in-between weather.",
+      "category": "clothing-shoes",
+      "type": "Clothing",
+      "gender": "men",
+      "label": "Trending",
+      "price": 128,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.6,
+      "reviewCount": 166,
+      "popularity": 476,
+      "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1591047139829-d91aecb6caea",
+      "colors": [
+        {
+          "name": "Copper",
+          "hex": "#c47a55"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "collections": [
+        "bold-fashion"
+      ],
+      "tryOn": {
+        "slot": "outer"
+      },
+      "reviews": [
+        {
+          "id": "4-0",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-09-15T18:00:00.000Z"
+        },
+        {
+          "id": "4-1",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-08-15T18:00:00.000Z"
+        },
+        {
+          "id": "4-2",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-07-15T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Satin-finish shell, quilted lining",
+        "fit": "regular",
+        "occasions": [
+          "everyday",
+          "party",
+          "date-night"
+        ],
+        "seasons": [
+          "autumn",
+          "winter"
+        ],
+        "styleTags": [
+          "streetwear",
+          "bold",
+          "retro"
+        ],
+        "features": [
+          "Ribbed collar, cuffs and hem",
+          "Lightweight quilted lining",
+          "Satin sheen"
+        ],
+        "keywords": [
+          "bomber",
+          "jacket",
+          "winter jacket",
+          "জ্যাকেট"
+        ],
+        "careNotes": "Machine wash cold, hang to dry",
+        "pairsWith": [
+          6,
+          19,
+          2
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "slug": "cloud-crew-sweatshirt",
+      "name": "Cloud Crew Sweatshirt",
+      "description": "Brushed-back fleece in a boxy crew cut. The sweatshirt you will reach for every weekend.",
+      "category": "clothing-shoes",
+      "type": "Clothing",
+      "gender": "women",
+      "label": "Essentials",
+      "price": 48,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.5,
+      "reviewCount": 203,
+      "popularity": 345,
+      "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1620799140408-edc6dcb6d633",
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#ffffff"
+        },
+        {
+          "name": "Mint",
+          "hex": "#b5eed3"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "collections": [
+        "winter-weekend"
+      ],
+      "tryOn": {
+        "slot": "top"
+      },
+      "reviews": [
+        {
+          "id": "5-0",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-09-14T18:00:00.000Z",
+          "fit": "small"
+        },
+        {
+          "id": "5-1",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-08-14T18:00:00.000Z",
+          "fit": "true"
+        },
+        {
+          "id": "5-2",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-07-14T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Brushed-back cotton fleece",
+        "fit": "oversized",
+        "fitNotes": "Boxy and roomy: size down for a closer fit",
+        "occasions": [
+          "everyday",
+          "lounge",
+          "travel"
+        ],
+        "seasons": [
+          "autumn",
+          "winter"
+        ],
+        "styleTags": [
+          "casual",
+          "cosy",
+          "minimal"
+        ],
+        "features": [
+          "Brushed-back fleece",
+          "Boxy crew cut",
+          "Ribbed trims"
+        ],
+        "keywords": [
+          "sweatshirt",
+          "jumper",
+          "sweater",
+          "সোয়েটশার্ট",
+          "সোয়েটার"
+        ],
+        "pairsWith": [
+          1,
+          22
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "slug": "lucky-cat-graphic-tee",
+      "name": "Lucky Cat Graphic Tee",
+      "description": "Heavyweight cotton tee with a screen-printed lucky cat graphic and a slightly dropped shoulder.",
+      "category": "clothing-shoes",
+      "type": "Clothing",
+      "gender": "men",
+      "label": "Our Picks",
+      "price": 29,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.4,
+      "reviewCount": 240,
+      "popularity": 214,
+      "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1576566588028-4147f3842f27",
+      "colors": [
+        {
+          "name": "Sand",
+          "hex": "#e9dfcf"
+        },
+        {
+          "name": "Cobalt",
+          "hex": "#1f5bff"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "top"
+      },
+      "reviews": [
+        {
+          "id": "6-0",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-09-13T18:00:00.000Z"
+        },
+        {
+          "id": "6-1",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-08-13T18:00:00.000Z"
+        },
+        {
+          "id": "6-2",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-07-13T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Heavyweight 100% cotton",
+        "fit": "relaxed",
+        "fitNotes": "Dropped shoulder, relaxed through the body",
+        "occasions": [
+          "everyday",
+          "travel"
+        ],
+        "seasons": [
+          "summer",
+          "all-season"
+        ],
+        "styleTags": [
+          "graphic",
+          "streetwear",
+          "playful"
+        ],
+        "features": [
+          "Screen-printed lucky cat",
+          "Heavyweight cotton",
+          "Dropped shoulder"
+        ],
+        "keywords": [
+          "t-shirt",
+          "tee",
+          "graphic tee",
+          "টি-শার্ট",
+          "গেঞ্জি"
+        ],
+        "careNotes": "Wash inside out in cold water",
+        "pairsWith": [
+          19,
+          12,
+          4
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "slug": "night-court-hoop",
+      "name": "Night Court Hoop",
+      "description": "Low-profile court shoe with responsive cushioning and a locked-in midfoot strap.",
+      "category": "clothing-shoes",
+      "type": "Shoes",
+      "gender": "men",
+      "label": "Sport",
+      "price": 112,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.3,
+      "reviewCount": 37,
+      "popularity": 83,
+      "image": "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1605348532760-6753d2c43329",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        },
+        {
+          "name": "Ice",
+          "hex": "#8ec3ea"
+        }
+      ],
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "feet"
+      },
+      "reviews": [
+        {
+          "id": "7-0",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-09-12T18:00:00.000Z",
+          "fit": "true"
+        },
+        {
+          "id": "7-1",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-08-12T18:00:00.000Z"
+        },
+        {
+          "id": "7-2",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-07-12T18:00:00.000Z",
+          "fit": "small"
+        }
+      ],
+      "details": {
+        "material": "Synthetic leather upper, responsive foam midsole",
+        "occasions": [
+          "sport",
+          "everyday"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "sporty",
+          "streetwear"
+        ],
+        "features": [
+          "Responsive cushioning",
+          "Locked-in midfoot strap",
+          "Low-profile court build"
+        ],
+        "keywords": [
+          "basketball shoes",
+          "court shoes",
+          "sneakers",
+          "কেডস",
+          "জুতা"
+        ],
+        "pairsWith": [
+          21,
+          20
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "slug": "crochet-fringe-poncho",
+      "name": "Crochet Fringe Poncho",
+      "description": "Hand-finished open crochet with a swingy fringe hem. Layer it over tanks or knits.",
+      "category": "clothing-shoes",
+      "type": "Clothing",
+      "gender": "women",
+      "label": "Boho",
+      "price": 56,
+      "compareAt": 80,
+      "isNew": false,
+      "rating": 4.2,
+      "reviewCount": 74,
+      "popularity": 949,
+      "image": "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1434389677669-e08b4cac3105",
+      "colors": [
+        {
+          "name": "Cream",
+          "hex": "#efe3cf"
+        },
+        {
+          "name": "Copper",
+          "hex": "#c47a55"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "collections": [
+        "offers"
+      ],
+      "tryOn": {
+        "slot": "outer"
+      },
+      "reviews": [
+        {
+          "id": "8-0",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-09-11T18:00:00.000Z"
+        },
+        {
+          "id": "8-1",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-08-11T18:00:00.000Z"
+        },
+        {
+          "id": "8-2",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-07-11T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Hand-finished cotton crochet",
+        "fit": "relaxed",
+        "occasions": [
+          "beach",
+          "travel",
+          "party"
+        ],
+        "seasons": [
+          "summer",
+          "autumn"
+        ],
+        "styleTags": [
+          "boho",
+          "handmade",
+          "festival"
+        ],
+        "features": [
+          "Open crochet",
+          "Swingy fringe hem",
+          "Layers over tanks or knits"
+        ],
+        "keywords": [
+          "poncho",
+          "shawl",
+          "cape",
+          "শাল",
+          "চাদর"
+        ],
+        "careNotes": "Hand wash cold, dry flat",
+        "pairsWith": [
+          25,
+          35
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "slug": "moto-leather-jacket",
+      "name": "Moto Leather Jacket",
+      "description": "Buttery lambskin biker with asymmetric zip, notched lapels and a belted hem.",
+      "category": "clothing-shoes",
+      "type": "Clothing",
+      "gender": "women",
+      "label": "Iconic",
+      "price": 189,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.9,
+      "reviewCount": 111,
+      "popularity": 970,
+      "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1551028719-00167b16eac5",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        },
+        {
+          "name": "Chestnut",
+          "hex": "#6b4b3a"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "collections": [
+        "bold-fashion"
+      ],
+      "tryOn": {
+        "slot": "outer"
+      },
+      "reviews": [
+        {
+          "id": "9-0",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-09-10T18:00:00.000Z"
+        },
+        {
+          "id": "9-1",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-08-10T18:00:00.000Z",
+          "fit": "small"
+        },
+        {
+          "id": "9-2",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-07-10T18:00:00.000Z",
+          "fit": "true"
+        }
+      ],
+      "details": {
+        "material": "Lambskin leather",
+        "fit": "slim",
+        "fitNotes": "Fitted: size up to wear a knit underneath",
+        "occasions": [
+          "party",
+          "date-night",
+          "everyday"
+        ],
+        "seasons": [
+          "autumn",
+          "winter"
+        ],
+        "styleTags": [
+          "edgy",
+          "biker",
+          "classic"
+        ],
+        "features": [
+          "Asymmetric zip",
+          "Notched lapels",
+          "Belted hem"
+        ],
+        "keywords": [
+          "leather jacket",
+          "biker jacket",
+          "জ্যাকেট",
+          "চামড়ার জ্যাকেট"
+        ],
+        "careNotes": "Specialist leather clean only",
+        "pairsWith": [
+          17,
+          26
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "slug": "classic-pocket-tee",
+      "name": "Classic Pocket Tee",
+      "description": "Midweight jersey tee with a chest pocket and a small embroidered badge.",
+      "category": "clothing-shoes",
+      "type": "Clothing",
+      "gender": "men",
+      "label": "Essentials",
+      "price": 22,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.8,
+      "reviewCount": 148,
+      "popularity": 687,
+      "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1618354691373-d851c5c3a990",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        },
+        {
+          "name": "White",
+          "hex": "#ffffff"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "top"
+      },
+      "reviews": [
+        {
+          "id": "10-0",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-09-09T18:00:00.000Z"
+        },
+        {
+          "id": "10-1",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-08-09T18:00:00.000Z"
+        },
+        {
+          "id": "10-2",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-07-09T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Midweight cotton jersey",
+        "fit": "regular",
+        "occasions": [
+          "everyday",
+          "office",
+          "travel"
+        ],
+        "seasons": [
+          "summer",
+          "all-season"
+        ],
+        "styleTags": [
+          "classic",
+          "minimal",
+          "basics"
+        ],
+        "features": [
+          "Chest pocket",
+          "Embroidered badge",
+          "Midweight jersey"
+        ],
+        "keywords": [
+          "t-shirt",
+          "tee",
+          "pocket tee",
+          "টি-শার্ট",
+          "গেঞ্জি"
+        ],
+        "careNotes": "Machine wash cold",
+        "pairsWith": [
+          20,
+          13
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "slug": "ember-knit-runner",
+      "name": "Ember Knit Runner",
+      "description": "Sock-like knit upper on a flexible, grippy sole. Built for tempo runs and long walks.",
+      "category": "clothing-shoes",
+      "type": "Shoes",
+      "gender": "unisex",
+      "label": "Bestseller",
+      "price": 98,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.7,
+      "reviewCount": 185,
+      "popularity": 995,
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1542291026-7eec264c27ff",
+      "colors": [
+        {
+          "name": "Scarlet",
+          "hex": "#e0322f"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "feet"
+      },
+      "reviews": [
+        {
+          "id": "11-0",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-09-08T18:00:00.000Z",
+          "fit": "small"
+        },
+        {
+          "id": "11-1",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-08-08T18:00:00.000Z",
+          "fit": "true"
+        },
+        {
+          "id": "11-2",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-07-08T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Knit textile upper, flexible rubber sole",
+        "occasions": [
+          "sport",
+          "everyday",
+          "travel"
+        ],
+        "seasons": [
+          "summer",
+          "all-season"
+        ],
+        "styleTags": [
+          "sporty",
+          "minimal"
+        ],
+        "features": [
+          "Sock-like knit upper",
+          "Grippy, flexible sole",
+          "Made for tempo runs and long walks"
+        ],
+        "keywords": [
+          "running shoes",
+          "knit sneakers",
+          "walking shoes",
+          "কেডস",
+          "জুতা"
+        ],
+        "pairsWith": [
+          21,
+          27
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "slug": "tan-canvas-court",
+      "name": "Tan Canvas Court",
+      "description": "Waxed canvas and suede overlays on a vulcanised sole, finished with contrast stitching.",
+      "category": "clothing-shoes",
+      "type": "Shoes",
+      "gender": "men",
+      "label": "Heritage",
+      "price": 84,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.6,
+      "reviewCount": 222,
+      "popularity": 425,
+      "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1549298916-b41d501d3772",
+      "colors": [
+        {
+          "name": "Tan",
+          "hex": "#c49a6c"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "collections": [
+        "winter-weekend"
+      ],
+      "tryOn": {
+        "slot": "feet"
+      },
+      "reviews": [
+        {
+          "id": "12-0",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-09-07T18:00:00.000Z"
+        },
+        {
+          "id": "12-1",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-08-07T18:00:00.000Z"
+        },
+        {
+          "id": "12-2",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-07-07T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Waxed canvas with suede overlays, vulcanised rubber sole",
+        "occasions": [
+          "everyday",
+          "travel",
+          "date-night"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "heritage",
+          "casual",
+          "classic"
+        ],
+        "features": [
+          "Waxed canvas",
+          "Suede overlays",
+          "Contrast stitching"
+        ],
+        "keywords": [
+          "canvas shoes",
+          "plimsolls",
+          "sneakers",
+          "কেডস",
+          "জুতা"
+        ],
+        "pairsWith": [
+          15,
+          19
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "slug": "studio-white-low",
+      "name": "Studio White Low",
+      "description": "Perforated leather low-top in crisp white. Goes with absolutely everything.",
+      "category": "clothing-shoes",
+      "type": "Shoes",
+      "gender": "unisex",
+      "label": "Essentials",
+      "price": 69,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.5,
+      "reviewCount": 19,
+      "popularity": 294,
+      "image": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1608231387042-66d1773070a5",
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#ffffff"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "feet"
+      },
+      "reviews": [
+        {
+          "id": "13-0",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-09-06T18:00:00.000Z",
+          "fit": "true"
+        },
+        {
+          "id": "13-1",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-08-06T18:00:00.000Z"
+        },
+        {
+          "id": "13-2",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-07-06T18:00:00.000Z",
+          "fit": "small"
+        }
+      ],
+      "details": {
+        "material": "Perforated leather upper, rubber cupsole",
+        "occasions": [
+          "everyday",
+          "office",
+          "travel"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "minimal",
+          "classic",
+          "clean"
+        ],
+        "features": [
+          "Crisp white leather",
+          "Perforated for airflow",
+          "Goes with everything"
+        ],
+        "keywords": [
+          "white sneakers",
+          "white shoes",
+          "সাদা জুতা",
+          "কেডস"
+        ],
+        "careNotes": "Wipe clean with a damp cloth",
+        "pairsWith": [
+          10,
+          20,
+          23
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "slug": "bloom-print-heels",
+      "name": "Bloom Print Heels",
+      "description": "Pointed stilettos wrapped in a vivid botanical print with a cushioned footbed.",
+      "category": "clothing-shoes",
+      "type": "Shoes",
+      "gender": "women",
+      "label": "Occasion",
+      "price": 119,
+      "compareAt": 170,
+      "isNew": false,
+      "rating": 4.4,
+      "reviewCount": 56,
+      "popularity": 163,
+      "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1543163521-1bf539c55dd2",
+      "colors": [
+        {
+          "name": "Cobalt",
+          "hex": "#1f5bff"
+        },
+        {
+          "name": "Blush",
+          "hex": "#f7a8c9"
+        }
+      ],
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41"
+      ],
+      "collections": [
+        "offers",
+        "bold-fashion"
+      ],
+      "tryOn": {
+        "slot": "feet"
+      },
+      "reviews": [
+        {
+          "id": "14-0",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-09-05T18:00:00.000Z"
+        },
+        {
+          "id": "14-1",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-08-05T18:00:00.000Z"
+        },
+        {
+          "id": "14-2",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-07-05T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Printed fabric upper, cushioned footbed, stiletto heel",
+        "fitNotes": "Narrow fit: size up for wider feet",
+        "occasions": [
+          "wedding",
+          "party",
+          "festive",
+          "date-night"
+        ],
+        "seasons": [
+          "summer",
+          "all-season"
+        ],
+        "styleTags": [
+          "elegant",
+          "statement",
+          "floral"
+        ],
+        "features": [
+          "Pointed toe",
+          "Botanical print",
+          "Cushioned footbed"
+        ],
+        "keywords": [
+          "heels",
+          "stilettos",
+          "high heels",
+          "হিল",
+          "জুতা"
+        ],
+        "pairsWith": [
+          17,
+          26
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "slug": "crisp-oxford-shirt",
+      "name": "Crisp Oxford Shirt",
+      "description": "Tailored oxford shirt in breathable cotton with a button-down collar.",
+      "category": "clothing-shoes",
+      "type": "Clothing",
+      "gender": "men",
+      "label": "Workwear",
+      "price": 58,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.3,
+      "reviewCount": 93,
+      "popularity": 32,
+      "image": "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1603252109303-2751441dd157",
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#ffffff"
+        },
+        {
+          "name": "Sky",
+          "hex": "#c9d7ff"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "top"
+      },
+      "reviews": [
+        {
+          "id": "15-0",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-09-04T18:00:00.000Z"
+        },
+        {
+          "id": "15-1",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-08-04T18:00:00.000Z",
+          "fit": "small"
+        },
+        {
+          "id": "15-2",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-07-04T18:00:00.000Z",
+          "fit": "true"
+        }
+      ],
+      "details": {
+        "material": "Breathable cotton oxford",
+        "fit": "slim",
+        "occasions": [
+          "office",
+          "formal",
+          "date-night"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "classic",
+          "smart",
+          "preppy"
+        ],
+        "features": [
+          "Button-down collar",
+          "Breathable cotton",
+          "Tailored cut"
+        ],
+        "keywords": [
+          "shirt",
+          "formal shirt",
+          "office shirt",
+          "শার্ট"
+        ],
+        "careNotes": "Machine wash, iron warm",
+        "pairsWith": [
+          20,
+          12,
+          23
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "slug": "slate-knit-slip-on",
+      "name": "Slate Knit Slip-On",
+      "description": "Laceless knit slip-on with a springy sole. Pull on and go.",
+      "category": "clothing-shoes",
+      "type": "Shoes",
+      "gender": "men",
+      "label": "New In",
+      "price": 79,
+      "compareAt": null,
+      "isNew": true,
+      "rating": 4.2,
+      "reviewCount": 130,
+      "popularity": 898,
+      "image": "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1562183241-b937e95585b6",
+      "colors": [
+        {
+          "name": "Stone",
+          "hex": "#9aa0a6"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "feet"
+      },
+      "reviews": [
+        {
+          "id": "16-0",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-09-03T18:00:00.000Z"
+        },
+        {
+          "id": "16-1",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-08-03T18:00:00.000Z"
+        },
+        {
+          "id": "16-2",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-07-03T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Knit textile upper, springy foam sole",
+        "occasions": [
+          "everyday",
+          "travel",
+          "lounge"
+        ],
+        "seasons": [
+          "summer",
+          "all-season"
+        ],
+        "styleTags": [
+          "minimal",
+          "casual"
+        ],
+        "features": [
+          "Laceless slip-on",
+          "Springy sole",
+          "Breathable knit"
+        ],
+        "keywords": [
+          "slip-on",
+          "loafers",
+          "sneakers",
+          "কেডস",
+          "জুতা"
+        ],
+        "pairsWith": [
+          10,
+          21
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "slug": "scarlet-wrap-dress",
+      "name": "Scarlet Wrap Dress",
+      "description": "A fluid wrap dress in a tonal floral print, cinched with a statement belt.",
+      "category": "clothing-shoes",
+      "type": "Clothing",
+      "gender": "women",
+      "label": "New In",
+      "price": 94,
+      "compareAt": null,
+      "isNew": true,
+      "rating": 4.9,
+      "reviewCount": 167,
+      "popularity": 767,
+      "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1572804013309-59a88b7e92f1",
+      "colors": [
+        {
+          "name": "Scarlet",
+          "hex": "#e0322f"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "collections": [
+        "bold-fashion"
+      ],
+      "tryOn": {
+        "slot": "dress"
+      },
+      "reviews": [
+        {
+          "id": "17-0",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-09-02T18:00:00.000Z",
+          "fit": "small"
+        },
+        {
+          "id": "17-1",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-08-02T18:00:00.000Z",
+          "fit": "true"
+        },
+        {
+          "id": "17-2",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-07-02T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Fluid viscose with a tonal floral print",
+        "fit": "regular",
+        "occasions": [
+          "party",
+          "wedding",
+          "festive",
+          "date-night"
+        ],
+        "seasons": [
+          "summer",
+          "autumn"
+        ],
+        "styleTags": [
+          "elegant",
+          "feminine",
+          "floral"
+        ],
+        "features": [
+          "Wrap silhouette",
+          "Statement belt",
+          "Tonal floral print"
+        ],
+        "keywords": [
+          "dress",
+          "red dress",
+          "party dress",
+          "জামা",
+          "ফ্রক",
+          "লাল জামা"
+        ],
+        "careNotes": "Hand wash or gentle cycle",
+        "pairsWith": [
+          14,
+          26,
+          35
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "slug": "flowing-maxi-dress",
+      "name": "Flowing Maxi Dress",
+      "description": "Floor-sweeping chiffon maxi with a full circle skirt that moves beautifully.",
+      "category": "clothing-shoes",
+      "type": "Clothing",
+      "gender": "women",
+      "label": "Occasion",
+      "price": 132,
+      "compareAt": 190,
+      "isNew": false,
+      "rating": 4.8,
+      "reviewCount": 204,
+      "popularity": 636,
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1595777457583-95e059d581b8",
+      "colors": [
+        {
+          "name": "Scarlet",
+          "hex": "#e0322f"
+        },
+        {
+          "name": "Cream",
+          "hex": "#efe3cf"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "collections": [
+        "offers"
+      ],
+      "tryOn": {
+        "slot": "dress"
+      },
+      "reviews": [
+        {
+          "id": "18-0",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-09-19T18:00:00.000Z"
+        },
+        {
+          "id": "18-1",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-08-19T18:00:00.000Z"
+        },
+        {
+          "id": "18-2",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-07-19T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Chiffon",
+        "fit": "relaxed",
+        "occasions": [
+          "wedding",
+          "party",
+          "festive",
+          "beach"
+        ],
+        "seasons": [
+          "summer"
+        ],
+        "styleTags": [
+          "romantic",
+          "elegant",
+          "flowy"
+        ],
+        "features": [
+          "Floor-sweeping length",
+          "Full circle skirt",
+          "Moves beautifully"
+        ],
+        "keywords": [
+          "maxi",
+          "long dress",
+          "gown",
+          "গাউন",
+          "লম্বা জামা"
+        ],
+        "careNotes": "Hand wash cold",
+        "pairsWith": [
+          3,
+          25
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "slug": "patched-relaxed-jeans",
+      "name": "Patched Relaxed Jeans",
+      "description": "Relaxed straight-leg jeans with hand-applied patches and light distressing.",
+      "category": "clothing-shoes",
+      "type": "Clothing",
+      "gender": "men",
+      "label": "Denim",
+      "price": 76,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.7,
+      "reviewCount": 241,
+      "popularity": 505,
+      "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1541099649105-f69ad21f3246",
+      "colors": [
+        {
+          "name": "Denim",
+          "hex": "#4a6ea8"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "bottom"
+      },
+      "reviews": [
+        {
+          "id": "19-0",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-09-18T18:00:00.000Z",
+          "fit": "true"
+        },
+        {
+          "id": "19-1",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-08-18T18:00:00.000Z"
+        },
+        {
+          "id": "19-2",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-07-18T18:00:00.000Z",
+          "fit": "small"
+        }
+      ],
+      "details": {
+        "material": "Cotton denim",
+        "fit": "relaxed",
+        "occasions": [
+          "everyday",
+          "travel"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "streetwear",
+          "vintage",
+          "casual"
+        ],
+        "features": [
+          "Relaxed straight leg",
+          "Hand-applied patches",
+          "Light distressing"
+        ],
+        "keywords": [
+          "jeans",
+          "denim",
+          "pants",
+          "জিন্স",
+          "প্যান্ট"
+        ],
+        "careNotes": "Wash inside out in cold water",
+        "pairsWith": [
+          6,
+          4,
+          12
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "slug": "raw-selvedge-denim",
+      "name": "Raw Selvedge Denim",
+      "description": "Rigid 14oz selvedge denim that fades to fit you over time.",
+      "category": "clothing-shoes",
+      "type": "Clothing",
+      "gender": "men",
+      "label": "Denim",
+      "price": 88,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.6,
+      "reviewCount": 38,
+      "popularity": 374,
+      "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1542272604-787c3835535d",
+      "colors": [
+        {
+          "name": "Navy",
+          "hex": "#1f2a44"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "collections": [
+        "winter-weekend"
+      ],
+      "tryOn": {
+        "slot": "bottom"
+      },
+      "reviews": [
+        {
+          "id": "20-0",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-09-17T18:00:00.000Z"
+        },
+        {
+          "id": "20-1",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-08-17T18:00:00.000Z"
+        },
+        {
+          "id": "20-2",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-07-17T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Rigid 14oz selvedge cotton denim",
+        "fit": "regular",
+        "fitNotes": "Stiff at first: it softens and gives a little with wear",
+        "occasions": [
+          "everyday",
+          "office",
+          "travel"
+        ],
+        "seasons": [
+          "autumn",
+          "winter"
+        ],
+        "styleTags": [
+          "heritage",
+          "classic",
+          "workwear"
+        ],
+        "features": [
+          "14oz selvedge denim",
+          "Fades to fit you over time",
+          "Rigid, unwashed finish"
+        ],
+        "keywords": [
+          "jeans",
+          "raw denim",
+          "selvedge",
+          "জিন্স",
+          "প্যান্ট"
+        ],
+        "careNotes": "Wash rarely, cold and inside out",
+        "pairsWith": [
+          15,
+          10,
+          13
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "slug": "everyday-grey-hoodie",
+      "name": "Everyday Grey Hoodie",
+      "description": "Heavyweight loopback hoodie with a double-layer hood and kangaroo pocket.",
+      "category": "clothing-shoes",
+      "type": "Clothing",
+      "gender": "unisex",
+      "label": "Essentials",
+      "price": 62,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.5,
+      "reviewCount": 75,
+      "popularity": 960,
+      "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1556821840-3a63f95609a7",
+      "colors": [
+        {
+          "name": "Stone",
+          "hex": "#9aa0a6"
+        },
+        {
+          "name": "Navy",
+          "hex": "#1f2a44"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "collections": [
+        "winter-weekend"
+      ],
+      "tryOn": {
+        "slot": "outer"
+      },
+      "reviews": [
+        {
+          "id": "21-0",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-09-16T18:00:00.000Z"
+        },
+        {
+          "id": "21-1",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-08-16T18:00:00.000Z",
+          "fit": "small"
+        },
+        {
+          "id": "21-2",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-07-16T18:00:00.000Z",
+          "fit": "true"
+        }
+      ],
+      "details": {
+        "material": "Heavyweight cotton loopback",
+        "fit": "relaxed",
+        "occasions": [
+          "everyday",
+          "lounge",
+          "travel",
+          "sport"
+        ],
+        "seasons": [
+          "autumn",
+          "winter"
+        ],
+        "styleTags": [
+          "casual",
+          "basics",
+          "cosy"
+        ],
+        "features": [
+          "Double-layer hood",
+          "Kangaroo pocket",
+          "Heavyweight loopback"
+        ],
+        "keywords": [
+          "hoodie",
+          "hooded sweatshirt",
+          "হুডি",
+          "সোয়েটার"
+        ],
+        "pairsWith": [
+          11,
+          19,
+          40
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "slug": "chunky-rib-beanie-set",
+      "name": "Chunky Rib Beanie Set",
+      "description": "A duo of chunky ribbed beanies in soft recycled wool blend.",
+      "category": "gifts-living",
+      "type": "Accessories",
+      "gender": "unisex",
+      "label": "Winter",
+      "price": 24,
+      "compareAt": 40,
+      "isNew": false,
+      "rating": 4.4,
+      "reviewCount": 112,
+      "popularity": 112,
+      "image": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1576871337632-b9aef4c17ab9",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        },
+        {
+          "name": "Blush",
+          "hex": "#f7a8c9"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [
+        "winter-weekend",
+        "offers"
+      ],
+      "tryOn": {
+        "slot": "head",
+        "crop": [
+          0.3,
+          0.5,
+          0.92,
+          0.92
+        ]
+      },
+      "reviews": [
+        {
+          "id": "22-0",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-09-15T18:00:00.000Z"
+        },
+        {
+          "id": "22-1",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-08-15T18:00:00.000Z"
+        },
+        {
+          "id": "22-2",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-07-15T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Recycled wool blend",
+        "occasions": [
+          "everyday",
+          "travel",
+          "gift"
+        ],
+        "seasons": [
+          "winter"
+        ],
+        "styleTags": [
+          "cosy",
+          "casual"
+        ],
+        "features": [
+          "Set of two",
+          "Chunky rib knit",
+          "Recycled wool blend"
+        ],
+        "keywords": [
+          "beanie",
+          "winter cap",
+          "wool hat",
+          "টুপি",
+          "উলের টুপি"
+        ],
+        "careNotes": "Hand wash, dry flat",
+        "pairsWith": [
+          21,
+          5
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "slug": "minimal-white-watch",
+      "name": "Minimal White Watch",
+      "description": "A clean-faced watch with a silicone strap and sapphire-coated glass.",
+      "category": "gifts-living",
+      "type": "Accessories",
+      "gender": "unisex",
+      "label": "Timeless",
+      "price": 149,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.3,
+      "reviewCount": 149,
+      "popularity": 978,
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1523275335684-37898b6baf30",
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#ffffff"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "wrist",
+        "crop": [
+          0.18,
+          0.25,
+          0.62,
+          0.7
+        ]
+      },
+      "reviews": [
+        {
+          "id": "23-0",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-09-14T18:00:00.000Z"
+        },
+        {
+          "id": "23-1",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-08-14T18:00:00.000Z"
+        },
+        {
+          "id": "23-2",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-07-14T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Silicone strap, sapphire-coated glass",
+        "occasions": [
+          "everyday",
+          "office",
+          "gift"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "minimal",
+          "clean",
+          "modern"
+        ],
+        "features": [
+          "Clean white face",
+          "Silicone strap",
+          "Sapphire-coated glass"
+        ],
+        "keywords": [
+          "watch",
+          "wristwatch",
+          "hand watch",
+          "ঘড়ি",
+          "হাতঘড়ি"
+        ],
+        "pairsWith": [
+          13,
+          15
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "slug": "classic-black-shades",
+      "name": "Classic Black Shades",
+      "description": "Square acetate frames with polarised, UV400 lenses.",
+      "category": "gifts-living",
+      "type": "Accessories",
+      "gender": "unisex",
+      "label": "Summer",
+      "price": 65,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.2,
+      "reviewCount": 186,
+      "popularity": 847,
+      "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1572635196237-14b3f281503f",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        },
+        {
+          "name": "Tan",
+          "hex": "#c49a6c"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "eyes",
+        "crop": [
+          0.15,
+          0.3,
+          0.97,
+          0.62
+        ]
+      },
+      "reviews": [
+        {
+          "id": "24-0",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-09-13T18:00:00.000Z"
+        },
+        {
+          "id": "24-1",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-08-13T18:00:00.000Z"
+        },
+        {
+          "id": "24-2",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-07-13T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Acetate frames, polarised lenses",
+        "occasions": [
+          "everyday",
+          "travel",
+          "beach"
+        ],
+        "seasons": [
+          "summer",
+          "all-season"
+        ],
+        "styleTags": [
+          "classic",
+          "bold"
+        ],
+        "features": [
+          "Polarised lenses",
+          "UV400 protection",
+          "Square acetate frames"
+        ],
+        "keywords": [
+          "sunglasses",
+          "shades",
+          "sunglass",
+          "সানগ্লাস",
+          "চশমা"
+        ],
+        "pairsWith": [
+          6,
+          40
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "slug": "woven-tan-handbag",
+      "name": "Woven Tan Handbag",
+      "description": "Hand-woven rattan body with a leather flap and top handle.",
+      "category": "gifts-living",
+      "type": "Accessories",
+      "gender": "women",
+      "label": "Handmade",
+      "price": 142,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.9,
+      "reviewCount": 223,
+      "popularity": 716,
+      "image": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1590874103328-eac38a683ce7",
+      "colors": [
+        {
+          "name": "Terracotta",
+          "hex": "#d9774b"
+        },
+        {
+          "name": "Tan",
+          "hex": "#c49a6c"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "hand",
+        "crop": [
+          0.05,
+          0.1,
+          0.95,
+          0.97
+        ],
+        "cutout": "plain"
+      },
+      "reviews": [
+        {
+          "id": "25-0",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-09-12T18:00:00.000Z"
+        },
+        {
+          "id": "25-1",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-08-12T18:00:00.000Z"
+        },
+        {
+          "id": "25-2",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-07-12T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Hand-woven rattan with a leather flap",
+        "occasions": [
+          "beach",
+          "travel",
+          "everyday",
+          "party"
+        ],
+        "seasons": [
+          "summer"
+        ],
+        "styleTags": [
+          "boho",
+          "handmade",
+          "natural"
+        ],
+        "features": [
+          "Hand-woven rattan",
+          "Leather flap",
+          "Top handle"
+        ],
+        "keywords": [
+          "handbag",
+          "bag",
+          "purse",
+          "ব্যাগ",
+          "হ্যান্ডব্যাগ"
+        ],
+        "pairsWith": [
+          18,
+          8,
+          35
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "slug": "rouge-top-handle-bag",
+      "name": "Rouge Top-Handle Bag",
+      "description": "Structured patent top-handle bag with a polished turn-lock closure.",
+      "category": "gifts-living",
+      "type": "Accessories",
+      "gender": "women",
+      "label": "Statement",
+      "price": 168,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.8,
+      "reviewCount": 20,
+      "popularity": 585,
+      "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1584917865442-de89df76afd3",
+      "colors": [
+        {
+          "name": "Scarlet",
+          "hex": "#e0322f"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [
+        "bold-fashion"
+      ],
+      "tryOn": {
+        "slot": "hand",
+        "crop": [
+          0.12,
+          0.15,
+          0.88,
+          0.9
+        ]
+      },
+      "reviews": [
+        {
+          "id": "26-0",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-09-11T18:00:00.000Z"
+        },
+        {
+          "id": "26-1",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-08-11T18:00:00.000Z"
+        },
+        {
+          "id": "26-2",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-07-11T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Structured patent finish",
+        "occasions": [
+          "party",
+          "wedding",
+          "festive",
+          "office"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "elegant",
+          "statement",
+          "classic"
+        ],
+        "features": [
+          "Structured shape",
+          "Polished turn-lock closure",
+          "Top handle"
+        ],
+        "keywords": [
+          "handbag",
+          "bag",
+          "purse",
+          "red bag",
+          "ব্যাগ",
+          "হ্যান্ডব্যাগ"
+        ],
+        "pairsWith": [
+          17,
+          14,
+          9
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "slug": "sage-steel-bottle",
+      "name": "Sage Steel Bottle",
+      "description": "Double-walled steel bottle keeps drinks cold for 24 hours, hot for 12.",
+      "category": "gifts-living",
+      "type": "Home",
+      "gender": "unisex",
+      "label": "Everyday",
+      "price": 28,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.7,
+      "reviewCount": 57,
+      "popularity": 454,
+      "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1602143407151-7111542de6e8",
+      "colors": [
+        {
+          "name": "Sage",
+          "hex": "#5f7f6a"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": null,
+      "reviews": [
+        {
+          "id": "27-0",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-09-10T18:00:00.000Z"
+        },
+        {
+          "id": "27-1",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-08-10T18:00:00.000Z"
+        },
+        {
+          "id": "27-2",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-07-10T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Double-walled stainless steel",
+        "occasions": [
+          "everyday",
+          "sport",
+          "travel",
+          "office"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "minimal",
+          "practical"
+        ],
+        "features": [
+          "Keeps drinks cold for 24 hours",
+          "Keeps drinks hot for 12 hours",
+          "Double-walled"
+        ],
+        "keywords": [
+          "water bottle",
+          "flask",
+          "bottle",
+          "পানির বোতল",
+          "বোতল"
+        ],
+        "careNotes": "Hand wash",
+        "pairsWith": [
+          34,
+          11
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "slug": "amber-glow-candle",
+      "name": "Amber Glow Candle",
+      "description": "Soy-wax candle scented with amber, cedar and a hint of vanilla. 50-hour burn.",
+      "category": "gifts-living",
+      "type": "Home",
+      "gender": "unisex",
+      "label": "Cosy",
+      "price": 32,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.6,
+      "reviewCount": 94,
+      "popularity": 323,
+      "image": "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1603006905003-be475563bc59",
+      "colors": [
+        {
+          "name": "Tan",
+          "hex": "#c49a6c"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [
+        "winter-weekend"
+      ],
+      "tryOn": null,
+      "reviews": [
+        {
+          "id": "28-0",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-09-09T18:00:00.000Z"
+        },
+        {
+          "id": "28-1",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-08-09T18:00:00.000Z"
+        },
+        {
+          "id": "28-2",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-07-09T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Soy wax",
+        "occasions": [
+          "gift",
+          "lounge",
+          "festive"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "cosy",
+          "warm"
+        ],
+        "features": [
+          "Amber, cedar and vanilla scent",
+          "50-hour burn",
+          "Soy wax"
+        ],
+        "keywords": [
+          "candle",
+          "scented candle",
+          "মোমবাতি",
+          "উপহার"
+        ],
+        "pairsWith": [
+          29,
+          39
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "slug": "porcelain-morning-mug",
+      "name": "Porcelain Morning Mug",
+      "description": "Hand-thrown porcelain mug with a matte glaze. Holds 350 ml.",
+      "category": "gifts-living",
+      "type": "Home",
+      "gender": "unisex",
+      "label": "Kitchen",
+      "price": 18,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.5,
+      "reviewCount": 131,
+      "popularity": 192,
+      "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1514228742587-6b1558fcca3d",
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#ffffff"
+        },
+        {
+          "name": "Sand",
+          "hex": "#e9dfcf"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": null,
+      "reviews": [
+        {
+          "id": "29-0",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-09-08T18:00:00.000Z"
+        },
+        {
+          "id": "29-1",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-08-08T18:00:00.000Z"
+        },
+        {
+          "id": "29-2",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-07-08T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Hand-thrown porcelain, matte glaze",
+        "occasions": [
+          "everyday",
+          "office",
+          "gift"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "minimal",
+          "handmade"
+        ],
+        "features": [
+          "Holds 350 ml",
+          "Matte glaze",
+          "Hand-thrown"
+        ],
+        "keywords": [
+          "mug",
+          "coffee mug",
+          "cup",
+          "মগ",
+          "কাপ"
+        ],
+        "careNotes": "Hand wash recommended",
+        "pairsWith": [
+          28,
+          39
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "slug": "mint-pot-succulent",
+      "name": "Mint Pot Succulent",
+      "description": "A hardy succulent in a glazed mint ceramic pot. Almost impossible to kill.",
+      "category": "gifts-living",
+      "type": "Home",
+      "gender": "unisex",
+      "label": "Plants",
+      "price": 26,
+      "compareAt": null,
+      "isNew": true,
+      "rating": 4.4,
+      "reviewCount": 168,
+      "popularity": 61,
+      "image": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1485955900006-10f4d324d411",
+      "colors": [
+        {
+          "name": "Mint",
+          "hex": "#b5eed3"
+        },
+        {
+          "name": "White",
+          "hex": "#ffffff"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": null,
+      "reviews": [
+        {
+          "id": "30-0",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-09-07T18:00:00.000Z"
+        },
+        {
+          "id": "30-1",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-08-07T18:00:00.000Z"
+        },
+        {
+          "id": "30-2",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-07-07T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Live succulent in a glazed ceramic pot",
+        "occasions": [
+          "gift",
+          "office",
+          "everyday"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "natural",
+          "minimal"
+        ],
+        "features": [
+          "Almost impossible to kill",
+          "Glazed mint pot",
+          "Low maintenance"
+        ],
+        "keywords": [
+          "plant",
+          "succulent",
+          "indoor plant",
+          "গাছ",
+          "টব"
+        ],
+        "careNotes": "Water every 2–3 weeks; bright light",
+        "pairsWith": [
+          31,
+          29
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "slug": "terracotta-cactus",
+      "name": "Terracotta Cactus",
+      "description": "Petite cactus in a classic terracotta pot. Loves a sunny windowsill.",
+      "category": "gifts-living",
+      "type": "Home",
+      "gender": "unisex",
+      "label": "Plants",
+      "price": 22,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.3,
+      "reviewCount": 205,
+      "popularity": 927,
+      "image": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1459411552884-841db9b3cc2a",
+      "colors": [
+        {
+          "name": "Terracotta",
+          "hex": "#d9774b"
+        },
+        {
+          "name": "White",
+          "hex": "#ffffff"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": null,
+      "reviews": [
+        {
+          "id": "31-0",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-09-06T18:00:00.000Z"
+        },
+        {
+          "id": "31-1",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-08-06T18:00:00.000Z"
+        },
+        {
+          "id": "31-2",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-07-06T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Live cactus in a terracotta pot",
+        "occasions": [
+          "gift",
+          "office",
+          "everyday"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "natural",
+          "minimal"
+        ],
+        "features": [
+          "Petite size",
+          "Classic terracotta pot",
+          "Loves a sunny windowsill"
+        ],
+        "keywords": [
+          "cactus",
+          "plant",
+          "indoor plant",
+          "ক্যাকটাস",
+          "গাছ"
+        ],
+        "careNotes": "Water sparingly; full sun",
+        "pairsWith": [
+          30,
+          27
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "slug": "studio-wireless-headphones",
+      "name": "Studio Wireless Headphones",
+      "description": "Over-ear headphones with active noise cancelling and 30-hour battery life.",
+      "category": "gifts-living",
+      "type": "Gifts",
+      "gender": "unisex",
+      "label": "Tech",
+      "price": 199,
+      "compareAt": 260,
+      "isNew": false,
+      "rating": 4.2,
+      "reviewCount": 242,
+      "popularity": 975,
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1505740420928-5e560c06d30e",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        },
+        {
+          "name": "White",
+          "hex": "#ffffff"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [
+        "offers"
+      ],
+      "tryOn": {
+        "slot": "ears",
+        "crop": [
+          0.38,
+          0.1,
+          0.92,
+          0.9
+        ]
+      },
+      "reviews": [
+        {
+          "id": "32-0",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-09-05T18:00:00.000Z"
+        },
+        {
+          "id": "32-1",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-08-05T18:00:00.000Z"
+        },
+        {
+          "id": "32-2",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-07-05T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Lightweight frame, cushioned ear cups",
+        "occasions": [
+          "travel",
+          "office",
+          "sport",
+          "gift"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "modern",
+          "minimal"
+        ],
+        "features": [
+          "Active noise cancelling",
+          "30-hour battery",
+          "Over-ear comfort"
+        ],
+        "keywords": [
+          "headphones",
+          "headset",
+          "wireless headphones",
+          "হেডফোন"
+        ],
+        "pairsWith": [
+          33,
+          34
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "slug": "midnight-smartwatch",
+      "name": "Midnight Smartwatch",
+      "description": "Fitness tracking, notifications and a week of battery in a sleek aluminium case.",
+      "category": "gifts-living",
+      "type": "Gifts",
+      "gender": "unisex",
+      "label": "Tech",
+      "price": 249,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.9,
+      "reviewCount": 39,
+      "popularity": 665,
+      "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1546868871-7041f2a55e12",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        },
+        {
+          "name": "Stone",
+          "hex": "#9aa0a6"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "wrist",
+        "crop": [
+          0.25,
+          0.25,
+          0.75,
+          0.8
+        ],
+        "cutout": "plain"
+      },
+      "reviews": [
+        {
+          "id": "33-0",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-09-04T18:00:00.000Z"
+        },
+        {
+          "id": "33-1",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-08-04T18:00:00.000Z"
+        },
+        {
+          "id": "33-2",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-07-04T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Aluminium case",
+        "occasions": [
+          "sport",
+          "everyday",
+          "office",
+          "gift"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "modern",
+          "sporty",
+          "tech"
+        ],
+        "features": [
+          "Fitness tracking",
+          "Notifications",
+          "A week of battery"
+        ],
+        "keywords": [
+          "smartwatch",
+          "smart watch",
+          "fitness tracker",
+          "স্মার্টওয়াচ",
+          "ঘড়ি"
+        ],
+        "pairsWith": [
+          32,
+          11
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "slug": "navy-day-backpack",
+      "name": "Navy Day Backpack",
+      "description": "Water-resistant daypack with a padded laptop sleeve and hidden back pocket.",
+      "category": "gifts-living",
+      "type": "Accessories",
+      "gender": "unisex",
+      "label": "Travel",
+      "price": 79,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.8,
+      "reviewCount": 76,
+      "popularity": 534,
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1553062407-98eeb64c6a62",
+      "colors": [
+        {
+          "name": "Navy",
+          "hex": "#1f2a44"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "hand",
+        "crop": [
+          0.25,
+          0.2,
+          0.75,
+          0.92
+        ]
+      },
+      "reviews": [
+        {
+          "id": "34-0",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-09-03T18:00:00.000Z"
+        },
+        {
+          "id": "34-1",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-08-03T18:00:00.000Z"
+        },
+        {
+          "id": "34-2",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-07-03T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Water-resistant fabric",
+        "occasions": [
+          "travel",
+          "office",
+          "everyday"
+        ],
+        "seasons": [
+          "monsoon",
+          "all-season"
+        ],
+        "styleTags": [
+          "practical",
+          "minimal"
+        ],
+        "features": [
+          "Water-resistant",
+          "Padded laptop sleeve",
+          "Hidden back pocket"
+        ],
+        "keywords": [
+          "backpack",
+          "laptop bag",
+          "school bag",
+          "ব্যাগ",
+          "ব্যাকপ্যাক"
+        ],
+        "pairsWith": [
+          27,
+          32
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "slug": "round-gold-sunglasses",
+      "name": "Round Gold Sunglasses",
+      "description": "Round metal frames with tinted green lenses and adjustable nose pads.",
+      "category": "gifts-living",
+      "type": "Accessories",
+      "gender": "women",
+      "label": "Summer",
+      "price": 72,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.7,
+      "reviewCount": 113,
+      "popularity": 403,
+      "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1511499767150-a48a237f0083",
+      "colors": [
+        {
+          "name": "Gold",
+          "hex": "#d4af37"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "eyes",
+        "crop": [
+          0.15,
+          0.3,
+          0.9,
+          0.58
+        ]
+      },
+      "reviews": [
+        {
+          "id": "35-0",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-09-02T18:00:00.000Z"
+        },
+        {
+          "id": "35-1",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-08-02T18:00:00.000Z"
+        },
+        {
+          "id": "35-2",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-07-02T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Metal frames, tinted lenses",
+        "occasions": [
+          "beach",
+          "travel",
+          "everyday"
+        ],
+        "seasons": [
+          "summer"
+        ],
+        "styleTags": [
+          "retro",
+          "boho",
+          "statement"
+        ],
+        "features": [
+          "Round metal frames",
+          "Tinted green lenses",
+          "Adjustable nose pads"
+        ],
+        "keywords": [
+          "sunglasses",
+          "round glasses",
+          "shades",
+          "সানগ্লাস",
+          "চশমা"
+        ],
+        "pairsWith": [
+          18,
+          25
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "slug": "botanical-face-oil",
+      "name": "Botanical Face Oil",
+      "description": "A lightweight blend of rosehip, jojoba and squalane for a dewy glow.",
+      "category": "gifts-living",
+      "type": "Gifts",
+      "gender": "unisex",
+      "label": "Self-care",
+      "price": 38,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.6,
+      "reviewCount": 150,
+      "popularity": 272,
+      "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1608571423902-eed4a5ad8108",
+      "colors": [
+        {
+          "name": "Tan",
+          "hex": "#c49a6c"
+        },
+        {
+          "name": "White",
+          "hex": "#ffffff"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": null,
+      "reviews": [
+        {
+          "id": "36-0",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-09-19T18:00:00.000Z"
+        },
+        {
+          "id": "36-1",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-08-19T18:00:00.000Z"
+        },
+        {
+          "id": "36-2",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-07-19T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Rosehip, jojoba and squalane oils",
+        "occasions": [
+          "gift",
+          "everyday"
+        ],
+        "seasons": [
+          "winter",
+          "all-season"
+        ],
+        "styleTags": [
+          "natural",
+          "self-care"
+        ],
+        "features": [
+          "Lightweight",
+          "Dewy glow",
+          "Rosehip, jojoba and squalane"
+        ],
+        "keywords": [
+          "face oil",
+          "skincare",
+          "serum",
+          "স্কিন কেয়ার"
+        ],
+        "pairsWith": [
+          37,
+          38
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "slug": "glow-makeup-kit",
+      "name": "Glow Makeup Kit",
+      "description": "Everything for a soft glam look: bronzer, highlighter, blush and brushes.",
+      "category": "gifts-living",
+      "type": "Gifts",
+      "gender": "women",
+      "label": "Beauty",
+      "price": 54,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.5,
+      "reviewCount": 187,
+      "popularity": 141,
+      "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1522335789203-aabd1fc54bc9",
+      "colors": [
+        {
+          "name": "Blush",
+          "hex": "#f7a8c9"
+        },
+        {
+          "name": "Sand",
+          "hex": "#e9dfcf"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": null,
+      "reviews": [
+        {
+          "id": "37-0",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-09-18T18:00:00.000Z"
+        },
+        {
+          "id": "37-1",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-08-18T18:00:00.000Z"
+        },
+        {
+          "id": "37-2",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-07-18T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Bronzer, highlighter, blush and brushes",
+        "occasions": [
+          "party",
+          "wedding",
+          "festive",
+          "gift"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "glam",
+          "soft"
+        ],
+        "features": [
+          "Bronzer, highlighter and blush",
+          "Brushes included",
+          "Soft glam look"
+        ],
+        "keywords": [
+          "makeup",
+          "makeup kit",
+          "cosmetics",
+          "মেকআপ",
+          "সাজ"
+        ],
+        "pairsWith": [
+          36,
+          38
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "slug": "pink-surprise-gift-box",
+      "name": "Pink Surprise Gift Box",
+      "description": "A curated mystery box of our favourite small treats, wrapped and ready.",
+      "category": "gifts-living",
+      "type": "Gifts",
+      "gender": "unisex",
+      "label": "Gift",
+      "price": 40,
+      "compareAt": null,
+      "isNew": true,
+      "rating": 4.4,
+      "reviewCount": 224,
+      "popularity": 10,
+      "image": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1549465220-1a8b9238cd48",
+      "colors": [
+        {
+          "name": "Blush",
+          "hex": "#f7a8c9"
+        },
+        {
+          "name": "Gold",
+          "hex": "#d4af37"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": null,
+      "reviews": [
+        {
+          "id": "38-0",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-09-17T18:00:00.000Z"
+        },
+        {
+          "id": "38-1",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-08-17T18:00:00.000Z"
+        },
+        {
+          "id": "38-2",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-07-17T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Curated small treats, gift-wrapped",
+        "occasions": [
+          "gift",
+          "festive"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "playful",
+          "giftable"
+        ],
+        "features": [
+          "A mystery selection",
+          "Wrapped and ready",
+          "Our favourite small treats"
+        ],
+        "keywords": [
+          "gift box",
+          "gift",
+          "present",
+          "উপহার",
+          "গিফট"
+        ],
+        "pairsWith": [
+          39,
+          28
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "slug": "kraft-ribbon-gift-set",
+      "name": "Kraft Ribbon Gift Set",
+      "description": "Candle, mug and a bar of artisan chocolate, tied with a satin ribbon.",
+      "category": "gifts-living",
+      "type": "Gifts",
+      "gender": "unisex",
+      "label": "Gift",
+      "price": 35,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.3,
+      "reviewCount": 21,
+      "popularity": 876,
+      "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1513201099705-a9746e1e201f",
+      "colors": [
+        {
+          "name": "Tan",
+          "hex": "#c49a6c"
+        },
+        {
+          "name": "Scarlet",
+          "hex": "#e0322f"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": null,
+      "reviews": [
+        {
+          "id": "39-0",
+          "author": "Jonas P.",
+          "rating": 4,
+          "title": "Solid quality",
+          "text": "Really nice finish. Took one star off because delivery took a day longer than promised.",
+          "date": "2026-09-16T18:00:00.000Z"
+        },
+        {
+          "id": "39-1",
+          "author": "Marco D.",
+          "rating": 3,
+          "title": "Good, not amazing",
+          "text": "Nice design but runs slightly small. Size up if you are between sizes.",
+          "date": "2026-08-16T18:00:00.000Z"
+        },
+        {
+          "id": "39-2",
+          "author": "Tom R.",
+          "rating": 4,
+          "title": "Great everyday pick",
+          "text": "Fits as expected and feels well made. Would buy again in another colour.",
+          "date": "2026-07-16T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Candle, mug and artisan chocolate",
+        "occasions": [
+          "gift",
+          "festive"
+        ],
+        "seasons": [
+          "all-season"
+        ],
+        "styleTags": [
+          "cosy",
+          "giftable"
+        ],
+        "features": [
+          "Candle, mug and chocolate",
+          "Tied with a satin ribbon",
+          "Ready to give"
+        ],
+        "keywords": [
+          "gift set",
+          "gift",
+          "hamper",
+          "উপহার",
+          "গিফট"
+        ],
+        "pairsWith": [
+          38,
+          28,
+          29
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "slug": "desert-cap",
+      "name": "Desert Cap",
+      "description": "Washed cotton dad cap with an embroidered cone and adjustable strap.",
+      "category": "gifts-living",
+      "type": "Accessories",
+      "gender": "unisex",
+      "label": "Summer",
+      "price": 27,
+      "compareAt": null,
+      "isNew": false,
+      "rating": 4.2,
+      "reviewCount": 58,
+      "popularity": 745,
+      "image": "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=600&q=80&auto=format&fit=crop",
+      "photoId": "1575428652377-a2d80e2277fc",
+      "colors": [
+        {
+          "name": "Sand",
+          "hex": "#e9dfcf"
+        },
+        {
+          "name": "Black",
+          "hex": "#1c1c1c"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "collections": [],
+      "tryOn": {
+        "slot": "head",
+        "crop": [
+          0.2,
+          0.05,
+          0.78,
+          0.5
+        ]
+      },
+      "reviews": [
+        {
+          "id": "40-0",
+          "author": "Priya S.",
+          "rating": 5,
+          "title": "Compliments everywhere",
+          "text": "I get asked where it is from every time I wear it.",
+          "date": "2026-09-15T18:00:00.000Z"
+        },
+        {
+          "id": "40-1",
+          "author": "Aisha K.",
+          "rating": 5,
+          "title": "Obsessed",
+          "text": "Even better in person. The quality is great for the price and it arrived quickly.",
+          "date": "2026-08-15T18:00:00.000Z"
+        },
+        {
+          "id": "40-2",
+          "author": "Lena M.",
+          "rating": 5,
+          "title": "Perfect gift",
+          "text": "Bought this for my sister and she loved it. Packaging was beautiful too.",
+          "date": "2026-07-15T18:00:00.000Z"
+        }
+      ],
+      "details": {
+        "material": "Washed cotton",
+        "occasions": [
+          "everyday",
+          "travel",
+          "sport"
+        ],
+        "seasons": [
+          "summer",
+          "all-season"
+        ],
+        "styleTags": [
+          "casual",
+          "streetwear"
+        ],
+        "features": [
+          "Embroidered cone",
+          "Adjustable strap",
+          "Washed cotton"
+        ],
+        "keywords": [
+          "cap",
+          "hat",
+          "baseball cap",
+          "ক্যাপ",
+          "টুপি"
+        ],
+        "pairsWith": [
+          6,
+          24
+        ]
+      }
+    }
+  ],
+  "categories": {
+    "clothing-shoes": {
+      "title": "Clothing and Shoes",
+      "subtitle": "Everyday layers and fresh kicks",
+      "color": "var(--mint)",
+      "image": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&q=80&auto=format&fit=crop",
+      "types": [
+        "Clothing",
+        "Shoes"
+      ]
+    },
+    "gifts-living": {
+      "title": "Gifts and Living",
+      "subtitle": "Thoughtful finds for them and for home",
+      "color": "var(--peach)",
+      "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=900&q=80&auto=format&fit=crop",
+      "types": [
+        "Accessories",
+        "Home",
+        "Gifts"
+      ]
+    }
+  },
+  "collections": {
+    "winter-weekend": {
+      "title": "Winter’s weekend",
+      "subtitle": "keep it casual",
+      "color": "var(--butter)",
+      "image": "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=900&q=80&auto=format&fit=crop"
+    },
+    "bold-fashion": {
+      "title": "Bring Bold Fashion",
+      "subtitle": "Layers on Layers",
+      "color": "var(--slate)",
+      "image": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=900&q=80&auto=format&fit=crop"
+    },
+    "offers": {
+      "title": "Get up to 50% off",
+      "subtitle": "Limited-time offers, plus an extra 20% with code WELCOME20",
+      "color": "var(--mint)",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&q=80&auto=format&fit=crop"
+    }
+  },
+  "stories": [
+    {
+      "slug": "winter-layering",
+      "title": "The art of winter layering",
+      "excerpt": "Puffers, knits and a little attitude: how to stay warm without looking bulky.",
+      "color": "var(--slate)",
+      "image": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=1200&q=80&auto=format&fit=crop",
+      "body": [
+        "Layering is less about piling on and more about proportion. Start close to the body with a fine knit or a heavyweight tee, then build outwards with pieces that get progressively looser.",
+        "A structured outer layer, like a bomber or a leather biker, pulls everything together. Keep colours tonal and let one statement piece do the talking.",
+        "Finish with texture: a chunky beanie, ribbed socks, or a scarf in a contrasting weave keeps the whole look interesting up close."
+      ],
+      "products": [
+        4,
+        9,
+        21,
+        22,
+        20
+      ]
+    },
+    {
+      "slug": "weekend-uniform",
+      "title": "Your new weekend uniform",
+      "excerpt": "Soft sweats, clean sneakers and a coffee in hand. Effortless, on repeat.",
+      "color": "var(--butter)",
+      "image": "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=1200&q=80&auto=format&fit=crop",
+      "body": [
+        "The best weekend outfits are the ones you do not think about. A great sweatshirt, relaxed denim and a pair of box-fresh sneakers cover almost everything.",
+        "Pick a palette of two or three soft colours and everything in your wardrobe starts working together."
+      ],
+      "products": [
+        5,
+        3,
+        12,
+        20,
+        28
+      ]
+    },
+    {
+      "slug": "colour-pop",
+      "title": "Colour pop: wear the brights",
+      "excerpt": "Scarlet, cobalt and citrus. Why this season is all about saturated colour.",
+      "color": "var(--mint)",
+      "image": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1200&q=80&auto=format&fit=crop",
+      "body": [
+        "Bright colour is the fastest way to lift an outfit. If you are new to it, start with a single piece like a red dress or a vivid pair of heels and keep everything else neutral.",
+        "Feeling brave? Clash complementary colours such as cobalt with orange or pink with red for a look that turns heads."
+      ],
+      "products": [
+        17,
+        14,
+        26,
+        11,
+        1
+      ]
+    },
+    {
+      "slug": "gift-guide",
+      "title": "The thoughtful gift guide",
+      "excerpt": "Small luxuries and useful beauties for everyone on your list.",
+      "color": "var(--peach)",
+      "image": "https://images.unsplash.com/photo-1512909006721-3d6018887383?w=1200&q=80&auto=format&fit=crop",
+      "body": [
+        "The best gifts feel personal without being complicated. Think about the little rituals people love, like a morning coffee, a candle-lit bath or a long walk with music.",
+        "Every gift ships wrapped with a handwritten note, so all you need to do is choose."
+      ],
+      "products": [
+        38,
+        39,
+        32,
+        36,
+        29
+      ]
+    },
+    {
+      "slug": "home-glow",
+      "title": "Slow evenings at home",
+      "excerpt": "Candles, plants and ceramics that make any room feel like a retreat.",
+      "color": "var(--butter)",
+      "image": "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=1200&q=80&auto=format&fit=crop",
+      "body": [
+        "A calm home starts with light. Swap harsh overheads for candles and warm lamps in the evening.",
+        "Add something living, like a succulent or a cactus, and a few handmade pieces to make the space feel yours."
+      ],
+      "products": [
+        28,
+        30,
+        31,
+        29,
+        27
+      ]
+    },
+    {
+      "slug": "street-denim",
+      "title": "Denim, done properly",
+      "excerpt": "From raw selvedge to patched and worn-in: finding the jeans that fit your life.",
+      "color": "var(--slate)",
+      "image": "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1200&q=80&auto=format&fit=crop",
+      "body": [
+        "Raw denim rewards patience. Wear it hard, wash it rarely and it will fade to fit your body perfectly.",
+        "Prefer instant character? Pre-distressed, patched styles give you that lived-in feel from day one."
+      ],
+      "products": [
+        19,
+        20,
+        15,
+        13,
+        34
+      ]
+    }
+  ],
+  "promoCodes": {
+    "WELCOME20": 0.2,
+    "CARTLY10": 0.1
+  },
+  "freeShippingOver": 100,
+  "shipping": {
+    "standard": {
+      "label": "Standard",
+      "eta": "3–5 business days",
+      "price": 8
+    },
+    "express": {
+      "label": "Express",
+      "eta": "1–2 business days",
+      "price": 15
+    }
+  },
+  "typeDetails": {
+    "Clothing": {
+      "details": [
+        "Relaxed, true-to-size fit",
+        "Organic cotton blend",
+        "Pre-washed for softness",
+        "Model is 178 cm wearing size M"
+      ],
+      "care": [
+        "Machine wash cold, inside out",
+        "Do not tumble dry",
+        "Iron on low heat"
+      ]
+    },
+    "Shoes": {
+      "details": [
+        "Cushioned foam midsole",
+        "Breathable knit and mesh upper",
+        "Rubber outsole with grip pattern",
+        "Fits true to size"
+      ],
+      "care": [
+        "Wipe clean with a damp cloth",
+        "Air dry away from direct heat",
+        "Remove insoles to dry"
+      ]
+    },
+    "Accessories": {
+      "details": [
+        "Designed to be worn every day",
+        "Premium hardware and finishes",
+        "Comes in a reusable dust bag"
+      ],
+      "care": [
+        "Store in the dust bag when not in use",
+        "Wipe with a soft dry cloth"
+      ]
+    },
+    "Home": {
+      "details": [
+        "Made in small batches",
+        "Responsibly sourced materials",
+        "Arrives gift-ready"
+      ],
+      "care": [
+        "Hand wash only",
+        "Keep away from direct sunlight"
+      ]
+    },
+    "Gifts": {
+      "details": [
+        "Gift wrapping included",
+        "Personal note on request",
+        "Easy 30-day exchanges"
+      ],
+      "care": [
+        "See the insert inside the box for care details"
+      ]
+    }
+  },
+  "usdToBdt": 122
+}
