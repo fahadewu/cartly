@@ -14,6 +14,7 @@ from .parsing import (
     ORDINALS,
     PAGES,
     TYPES,
+    budget,
     money,
     normalise,
     occasion_of,
@@ -100,6 +101,11 @@ class RuleBrain:
         self.catalog = catalog
         self._index_for = None
         self._index: list[dict] = []
+
+    @property
+    def rate(self) -> float | None:
+        """Taka per US dollar, when the store has set one."""
+        return (getattr(self.catalog, "payments", None) or {}).get("usdToBdt")
 
     # ---------- catalog index ----------
     @property
@@ -194,11 +200,11 @@ class RuleBrain:
         lo, hi = f.get("min"), f.get("max")
         price = ""
         if lo is not None and hi is not None:
-            price = f" between {money(lo)} and {money(hi)}"
+            price = f" between {budget(lo, f.get('rate'))} and {budget(hi, f.get('rate'))}"
         elif hi is not None:
-            price = f" under {money(hi)}"
+            price = f" under {budget(hi, f.get('rate'))}"
         elif lo is not None:
-            price = f" over {money(lo)}"
+            price = f" over {budget(lo, f.get('rate'))}"
         return re.sub(r"\s+", " ", f"{' '.join(bits)} {who}{what}{price}").strip()
 
     # ---------- references ----------
@@ -430,7 +436,7 @@ class RuleBrain:
             product = self.resolve_ref(t, memory)
             if not product:
                 # "try on a red dress": search for it and put the best match on.
-                f = parse_filters(re.sub(r"\b(try|on|me|wear|see|how|would|look)\b", " ", t))
+                f = parse_filters(re.sub(r"\b(try|on|me|wear|see|how|would|look)\b", " ", t), self.rate)
                 items, _ = self.search(f, limit=6)
                 wearable = next((p for p in items if self.wearable(p["id"])), None)
                 if not wearable and any(needs_ai_tryon(p) for p in items):
@@ -511,7 +517,7 @@ class RuleBrain:
                 return {"text": f"Taking you to {page['name']}.", "actions": [{"type": "navigate", "to": page["to"]}]}
 
         # 6. Refinements on the last search (only when the message doesn't describe something new).
-        fresh = parse_filters(t)
+        fresh = parse_filters(t, self.rate)
         bare = not fresh.get("types") and fresh.get("occasion") is None and not fresh.get("gift") and not any(len(w) > 2 for w in fresh["terms"])
         last = memory.get("filters") if bare else None
         prices = [p["price"] for p in (self.product(i) for i in results) if p]
@@ -534,16 +540,18 @@ class RuleBrain:
             extra = {k: v for k, v in fresh.items() if v is not None and not (isinstance(v, list) and not v)}
             return self.run_search({**last, **extra, "terms": last.get("terms") or []}, memory, name)
 
-        if test(r"\b(surprise me|random|anything|inspire me)\b", t):
+        long_terms = [w for w in fresh["terms"] if len(w) > 2]
+        any_filter = any(fresh.get(k) for k in ("types", "colors", "gender", "sale", "isNew", "gift", "sort")) or fresh.get("min") is not None or fresh.get("max") is not None or fresh.get("occasion") is not None
+
+        # "Surprise me", but not "anything for a beach day?": a message that says what it wants is a search.
+        if test(r"\b(surprise me|random|anything|inspire me)\b", t) and not any_filter and not [w for w in long_terms if w not in ("surprise", "random", "inspire")]:
             items = random.sample(self.catalog.products, min(4, len(self.catalog.products)))
             memory["results"] = [p["id"] for p in items]
             memory["filters"] = {"terms": []}
             return {"text": "Ooh, fun! Here are four random things I love right now ✨", "products": memory["results"], "chips": self.result_chips(items), "mood": "happy"}
 
         # 7. Everything else is a product search.
-        long_terms = [w for w in fresh["terms"] if len(w) > 2]
         unknown = [w for w in long_terms if not any(w in e["blob"] for e in self.index)]
-        any_filter = any(fresh.get(k) for k in ("types", "colors", "gender", "sale", "isNew", "gift", "sort")) or fresh.get("min") is not None or fresh.get("max") is not None or fresh.get("occasion") is not None
         if unknown and len(unknown) == len(long_terms) and not any_filter:
             items, _ = self.search({"sort": "popular", "terms": []})
             memory["results"] = [p["id"] for p in items]
@@ -615,7 +623,7 @@ class RuleBrain:
         t = f" {text.lower()} "
         if len(t.strip()) < 3:
             return []
-        f = parse_filters(t)
+        f = parse_filters(t, self.rate)
         meaningful = (
             f.get("types") or f.get("colors") or f.get("gift") or f.get("occasion") is not None or f.get("sale") or f.get("isNew")
             or f.get("max") is not None or f.get("min") is not None

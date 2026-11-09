@@ -2,7 +2,7 @@
 // browser. It parses what the shopper asks for, searches the real catalog and
 // returns a reply plus actions for the UI to perform. No API key needed; swap
 // `respond()` for a real LLM call later and the UI stays the same.
-import { money } from '../data.js'
+import { money, bdtRate } from '../data.js'
 import { products, productById, categories } from '../catalog.js'
 import { isWearable, needsAiTryOn, specFor, SLOT_LABEL } from '../tryon/specs.js'
 
@@ -115,8 +115,17 @@ const index = () => {
   return entries
 }
 
+// A budget said in taka: "5000 taka", "৳5000", "tk 5000", "৫০০০ টাকা".
+const TAKA = /৳|টাকা|(?<![a-z])(?:taka|tk|bdt)(?![a-z])/g
+// A price limit the way the shopper said it: "$40", or "৳5,000 (~$41)" when they gave it in taka.
+const budget = (n, rate) => (rate ? `৳${Math.round(n * rate).toLocaleString('en-US')} (~$${Math.round(n)})` : money(n))
+
+// Prices are in dollars, so a budget said in taka is converted; f.rate remembers the shopper thinks in taka.
 function parseFilters(t) {
   const f = {}
+  const rate = bdtRate.value
+  const taka = !!rate && t.search(TAKA) >= 0
+  if (taka) t = t.replace(/[০-৯]/g, (d) => '০১২৩৪৫৬৭৮৯'.indexOf(d)).replace(TAKA, ' ')
   if (GENDER.women.test(t) && !GENDER.men.test(t)) f.gender = 'women'
   else if (GENDER.men.test(t) && !GENDER.women.test(t)) f.gender = 'men'
 
@@ -132,7 +141,11 @@ function parseFilters(t) {
   else {
     if ((m = t.match(/(?:under|below|less than|cheaper than|max(?:imum)?|up to|within|no more than|budget(?: of| is)?)\s*\$?(\d+)/))) f.max = Number(m[1])
     if ((m = t.match(/(?:over|above|more than|at least|from|min(?:imum)?)\s*\$?(\d+)/))) f.min = Number(m[1])
-    if (!f.max && !f.min && (m = t.match(/\$(\d+)/))) f.max = Number(m[1])
+    if (!f.max && !f.min && (m = t.match(taka ? /\b(\d+)\b/ : /\$(\d+)/))) f.max = Number(m[1])
+  }
+  if (taka && (f.max || f.min)) {
+    for (const k of ['min', 'max']) if (f[k]) f[k] = Math.round((f[k] / rate) * 100) / 100
+    f.rate = rate
   }
   if (/\b(cheap|affordable|budget|inexpensive|low cost)\b/.test(t) && !f.max) f.max = 50
   if (/\b(premium|luxury|luxurious|expensive|high end|splurge)\b/.test(t) && !f.min) f.min = 120
@@ -211,9 +224,9 @@ function describe(f, n = 2) {
         ? one ? f.occasion.label.replace(/s$/, '') : f.occasion.label
         : one ? 'pick' : 'picks'
   let price = ''
-  if (f.min != null && f.max != null) price = ` between ${money(f.min)} and ${money(f.max)}`
-  else if (f.max != null) price = ` under ${money(f.max)}`
-  else if (f.min != null) price = ` over ${money(f.min)}`
+  if (f.min != null && f.max != null) price = ` between ${budget(f.min, f.rate)} and ${budget(f.max, f.rate)}`
+  else if (f.max != null) price = ` under ${budget(f.max, f.rate)}`
+  else if (f.min != null) price = ` over ${budget(f.min, f.rate)}`
   return `${bits.join(' ')} ${who}${what}${price}`.replace(/\s+/g, ' ').trim()
 }
 
@@ -541,7 +554,10 @@ export function respond(input, memory, ctx) {
     return runSearch(merged, memory, name)
   }
 
-  if (/\b(surprise me|random|anything|inspire me)\b/.test(t)) {
+  const anyFilter = fresh.types || fresh.colors || fresh.gender || fresh.min != null || fresh.max != null || fresh.occasion || fresh.sale || fresh.isNew || fresh.gift || fresh.sort
+
+  // "Surprise me", but not "anything for a beach day?": a message that says what it wants is a search.
+  if (/\b(surprise me|random|anything|inspire me)\b/.test(t) && !anyFilter && !fresh.terms.some((w) => w.length > 2 && !['surprise', 'random', 'inspire'].includes(w))) {
     const ids = [...products].sort(() => Math.random() - 0.5).slice(0, 4)
     memory.results = ids.map((p) => p.id)
     memory.filters = { terms: [] }
@@ -550,7 +566,6 @@ export function respond(input, memory, ctx) {
 
   // 7. Everything else is a product search.
   const unknown = fresh.terms.filter((w) => w.length > 2 && !index().some((e) => e.blob.includes(w)))
-  const anyFilter = fresh.types || fresh.colors || fresh.gender || fresh.min != null || fresh.max != null || fresh.occasion || fresh.sale || fresh.isNew || fresh.gift || fresh.sort
   if (unknown.length && unknown.length === fresh.terms.filter((w) => w.length > 2).length && !anyFilter) {
     const { items } = search({ sort: 'popular', terms: [] })
     memory.results = items.map((p) => p.id)

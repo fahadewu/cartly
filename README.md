@@ -48,6 +48,9 @@ To switch an AI feature on: `cp .env.example .env`, add the key (and a daily spe
 Each one can also run on Meta Model API (`META_API_KEY` plus one switch per job, see `.env.example`); the defaults
 stay as they are until Meta passes a test in Bangla.
 
+The demo video was recorded with Pip on Meta Muse Spark 1.3. A fresh install with no keys runs the English rule
+brain instead, so its replies are plainer than the ones in the video.
+
 ### A five-minute tour
 
 - **Store:** search "office shirt" or "কেডস". Ask Pip "red sneakers under $100" or "show me something for Eid".

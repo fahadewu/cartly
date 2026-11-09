@@ -1,4 +1,4 @@
-from app.brain.parsing import money, normalise, parse_filters, parse_size, stem, tokens
+from app.brain.parsing import budget, money, normalise, parse_filters, parse_size, stem, tokens
 
 
 def test_normalise_ordinals_and_punctuation():
@@ -38,3 +38,16 @@ def test_parse_size():
 
 def test_money():
     assert money(98) == "$98" and money(98.5) == "$98.50"
+
+
+def test_a_budget_in_taka_is_converted_to_the_catalog_s_dollars():
+    for msg in ("a gift under 5000 taka", "a gift under ৳5000", "gift within tk 5000", "৫০০০ টাকা gift", "gift 5000tk"):
+        f = parse_filters(normalise(msg), 122)
+        assert f["max"] == 40.98 and f["rate"] == 122 and f.get("gift"), msg
+        assert "taka" not in f["terms"] and "tk" not in f["terms"], msg
+    f = parse_filters(normalise("between 2000 and 6000 taka"), 122)
+    assert (f["min"], f["max"]) == (16.39, 49.18)
+    # Dollars stay dollars, and without a store rate nothing is converted.
+    assert parse_filters(normalise("under $50"), 122) == parse_filters(normalise("under $50"))
+    assert parse_filters(normalise("under 5000 taka"))["max"] == 5000
+    assert budget(40.98, 122) == "৳5,000 (~$41)" and budget(40) == "$40"

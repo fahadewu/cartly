@@ -117,8 +117,18 @@ def occasion_of(f: dict) -> dict | None:
     return OCCASIONS[i] if isinstance(i, int) and 0 <= i < len(OCCASIONS) else None
 
 
-def parse_filters(t: str) -> dict:
+# A budget said in taka: "5000 taka", "৳5000", "tk 5000", "৫০০০ টাকা".
+TAKA = re.compile(r"৳|টাকা|(?<![a-z])(?:taka|tk|bdt)(?![a-z])")
+BANGLA_DIGITS = str.maketrans("০১২৩৪৫৬৭৮৯", "0123456789")
+
+
+def parse_filters(t: str, rate: float | None = None) -> dict:
+    """`rate` is the store's taka per US dollar. Prices are in dollars, so a budget said in taka is converted, and
+    `f["rate"]` remembers that the shopper thinks in taka (describe() then answers in taka too)."""
     f: dict = {}
+    taka = bool(rate) and TAKA.search(t) is not None
+    if taka:
+        t = TAKA.sub(" ", t.translate(BANGLA_DIGITS))
     women, men = GENDER["women"].search(t), GENDER["men"].search(t)
     if women and not men:
         f["gender"] = "women"
@@ -146,9 +156,14 @@ def parse_filters(t: str) -> dict:
         if m:
             f["min"] = int(m.group(1))
         if not f.get("max") and not f.get("min"):
-            m = re.search(r"\$(\d+)", t)
+            m = re.search(r"\b(\d+)\b" if taka else r"\$(\d+)", t)
             if m:
                 f["max"] = int(m.group(1))
+    if taka and (f.get("max") or f.get("min")):
+        for k in ("min", "max"):
+            if f.get(k):
+                f[k] = round(f[k] / rate, 2)
+        f["rate"] = rate
     if test(r"\b(cheap|affordable|budget|inexpensive|low cost)\b", t) and not f.get("max"):
         f["max"] = 50
     if test(r"\b(premium|luxury|luxurious|expensive|high end|splurge)\b", t) and not f.get("min"):
@@ -202,3 +217,8 @@ def parse_color(t: str, product: dict) -> str | None:
 def money(n) -> str:
     f = float(n)
     return f"${int(f)}" if f.is_integer() else f"${f:.2f}"
+
+
+def budget(n, rate: float | None = None) -> str:
+    """A price limit the way the shopper said it: "$40", or "৳5,000 (~$41)" when they gave it in taka."""
+    return f"৳{round(float(n) * rate):,} (~${round(float(n))})" if rate else money(n)

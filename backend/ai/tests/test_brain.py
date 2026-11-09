@@ -140,3 +140,24 @@ def test_a_complaint_gets_an_apology_and_a_person_when_the_store_has_one(brain):
         assert brain.respond("show me a red dress", {}, {}).get("actions") != [{"type": "human"}]
     finally:
         brain.catalog.support = {}
+
+
+def test_a_taka_budget_is_answered_in_taka(brain):
+    old = brain.catalog.payments
+    brain.catalog.payments = {"methods": [], "usdToBdt": 122}
+    try:
+        memory = {}
+        r = brain.respond("I need a birthday gift for my sister under 5000 taka", memory, {})
+        assert r["products"] and all(brain.product(i)["price"] <= 40.98 for i in r["products"])
+        assert "$5000" not in r["text"]
+        assert "৳5,000 (~$41)" in brain.describe(memory["filters"], 2)
+    finally:
+        brain.catalog.payments = old
+
+
+def test_anything_with_a_wish_is_a_search_not_a_surprise(brain):
+    r = brain.respond("Anything for a beach day? Maybe sunglasses", {}, {})
+    assert "random" not in r["text"] and r["products"]
+    assert all(brain.product(i)["type"] == "Accessories" for i in r["products"])
+    assert "random" in brain.respond("surprise me", {}, {})["text"]
+    assert "random" in brain.respond("anything", {}, {})["text"]
