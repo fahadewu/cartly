@@ -159,3 +159,7 @@ port, naming it. `./dev.sh status` and `./dev.sh stop` do what they say.
 More: [backend/README.md](backend/README.md) (API, business rules, payments, delivery),
 [backend/ai/README.md](backend/ai/README.md) (how Pip works), [TESTING.md](TESTING.md) (test accounts and sandbox
 details) and [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) (the whole project in one file, for people and AI assistants).
+
+## Licence
+
+[MIT](LICENSE).
